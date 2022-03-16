@@ -11,62 +11,82 @@
 
         <title>Hello, world!</title>
 
+        <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#top">Jonah Cote</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#experience">Experience</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Contact
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="mailto:jwcote@uvm.edu">Email</a></li>
-                      <li><a class="dropdown-item" href="https://www.linkedin.com/in/jonah-cote/">LinkedIn</a></li>
-                      <li><a class="dropdown-item" href="https://github.com/jonahcote">GitHub</a></li>
+                
+                <a class="navbar-brand" href="#top">
+                    <img src="./jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
+                    Jonah Cote
+                </a>
+
+                <!--Navbar hamburger menu for small screens-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Wide navbar content-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
+                        <!--Links-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
+                        </li>
+                        
+                        <!--
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
+                        </li>
+                        -->
+
+                    <!--Dropdown links-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="mailto:jwcote@uvm.edu" target="_blank" rel="noopener noreferrer">Email</a></li>
+                        <li><a class="dropdown-item" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        </ul>
+                    </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </div>
-          </nav>
+        </nav>
 
     </head>
     <body>
         <!--Welcome-->
         <div id="top">
-            <h1>Welcome</h1>
+            <h2>Welcome</h2>
         </div>
+
         <!--Experience-->
         <div id="experience">
-            <h1>Experience</h1>
+            <h2>Experience</h2>
         </div>
+
         <!--Skills-->
         <div id="skills">
-            <h1>Skills</h1>
+            <h2>Skills</h2>
         </div>
+
         <!--Project-->
         <div id="project">
-            <h1>Project</h1>
+            <h2>Project</h2>
         </div>
+
         <!--Contact-->
         <div id="contact">
-            <h1>Contact</h1>
+            <h2>Contact</h2>
         </div>
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
