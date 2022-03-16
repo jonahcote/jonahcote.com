@@ -9,42 +9,38 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        <title>Hello, world!</title>
+        <title>Jonah Cote</title>
 
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                
-                <a class="navbar-brand" href="#top">
-                    <img src="./jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
-                    Jonah Cote
-                </a>
+    </head>
 
-                <!--Navbar hamburger menu for small screens-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded">
 
-                <!--Wide navbar content-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
-                        <!--Links-->
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#experience">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
-                        </li>
-                        
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
-                        </li>
-                        -->
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="#top">
+                <img src="./jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
+                Jonah Cote
+            </a>
+
+            <!--Navbar hamburger menu for small screens-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Wide navbar content-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <!--Links-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#experience">Experience</a>
+                    </li>
 
                     <!--Dropdown links-->
                     <li class="nav-item dropdown">
@@ -57,39 +53,92 @@
                         <li><a class="dropdown-item" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                         </ul>
                     </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                </ul>
 
-    </head>
-    <body>
-        <!--Welcome-->
+                <form class="container-fluid justify-content-start">
+                    <a class="nav-link active" aria-current="page" href="./Jonah Cote Resume 2022.pdf" download><button class="btn btn-success me-2" type="button">Download Resume</button></a>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <body class="p-3 mx-auto w-75">
+
+        <!--About-->
         <div id="top">
-            <h2>Welcome</h2>
+            <h2 class="">About Me</h2>
+            <p>Hello traveller...</p>
+        </div>
+
+        <!--Projects-->
+        <div id="projects" class="w-75">
+
+            <h2 class="">Select Projects</h2>
+
+            <!--Accordian-->
+            <div class="accordion accordion-flush" id="projectsAccordian">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <section></span>US Drone Strike Analysis <span class="badge bg-primary">C++</span> <span class="badge bg-primary">Python3</span> </section>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">This project analyzed and manipulated data from the non-profit <a href="https://acleddata.com/about-acled/" target="_blank" rel="noopener noreferrer">Armed Conflict Location & Event Data Project (ACLED)</a>.
+                        
+
+
+                        </div>
+                        <div class="accordion-body">Item 2</div>
+                        <div class="accordion-body">Item 3</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <section></span>UVM Photo Club Website <span class="badge bg-primary">HTML/CSS</span>  <span class="badge bg-primary">PHP</span>  <span class="badge bg-primary">SQL</span> <span class="badge bg-success">Still hosted!</span></section>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <section>Discord Environmentalism Bot <span class="badge bg-primary">Python3</span> <span class="badge bg-primary ">JavaScript</span></section>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <!--Skills-->
+        <div id="skills" class="w-75">
+            <h2 class="">Skills</h2>
+            <p>Ruby: 1/5</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
         </div>
 
         <!--Experience-->
         <div id="experience">
-            <h2>Experience</h2>
-        </div>
-
-        <!--Skills-->
-        <div id="skills">
-            <h2>Skills</h2>
-        </div>
-
-        <!--Project-->
-        <div id="project">
-            <h2>Project</h2>
+            <h2 class="">Experience</h2>
+            <p></p>
         </div>
 
         <!--Contact-->
         <div id="contact">
-            <h2>Contact</h2>
+            <h2 class="">Contact</h2>
+            <p></p>
         </div>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     </body>
