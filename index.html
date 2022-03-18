@@ -78,31 +78,28 @@
             </div>
         </nav>
 
-        <p>&nbsp;</p>
+        <span>&nbsp;</span>
 
         <!--About-->
         <div id="top" class="rounded-2 bg-light p-3">
             <h2 class="">About Me</h2>
             <figure class="text-center">
                 <blockquote class="blockquote">
-                    <p>Any sufficiently advanced technology is indistinguishable from <span class="text-primary" id="demo"></span>🪄 </p>
+                    <p>Any sufficiently advanced technology is indistinguishable from <span class="text-primary" id="selftyping"></span>🪄 </p>
                 </blockquote>
                     <figcaption class="blockquote-footer">
                     Arthur C. Clarke
                     </figcaption>
             </figure>
             <p>
-                I always wanted to grow up a <span
+                I always wanted to grow up a 
+                <span
                 class="txt-rotate"
                 data-period="2000"
                 data-rotate='[ "magician.", "programmer.", "problem solver.", "good human."]'></span> 
             </p>
-            <p>Hi! I'm Jonah.
-                Born and raised in Vermont's rugged <a href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>, 
-                more stuff about me here.
-            </p>
-            <p>These days, when not skiing⛷️or making maps🗺️, I try to make that younger me proud.</p>
-
+            <p>Hi! I'm Jonah, born and raised in Vermont's rugged <a href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>.</p>
+            <p>These days, when not skiing⛷️or making maps🗺️, I try to make my younger self proud.</p>
         </div>
 
         <!--Projects-->
@@ -115,7 +112,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingProjectOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectOne" aria-expanded="false" aria-controls="flush-collapseProjectOne">
-                            US Drone Strike Analysis&nbsp; <span class="badge bg-primary">C++</span> &nbsp; <span class="badge bg-primary">Python3</span>
+                            US Drone Strike Analysis &nbsp; <span class="badge bg-primary">C++</span> &nbsp; <span class="badge bg-primary">Python3</span>
                         </button>
                     </h2>
                     <div id="flush-collapseProjectOne" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectOne" data-bs-parent="#accordionFlushExample">
@@ -142,7 +139,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingProjectTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectTwo" aria-expanded="false" aria-controls="flush-collapseProjectTwo">
-                            UVM Photo Club Website&nbsp; <span class="badge bg-primary">HTML/CSS</span> &nbsp; <span class="badge bg-primary">PHP</span> &nbsp; <span class="badge bg-primary">SQL</span> &nbsp; <span class="badge bg-success">View live!</span>
+                            UVM Photo Club Website &nbsp; <span class="badge bg-primary">HTML/CSS</span> &nbsp; <span class="badge bg-primary">PHP</span> &nbsp; <span class="badge bg-primary">SQL</span> &nbsp; <span class="badge bg-success">View live!</span>
                         </button>
                     </h2>
                     <div id="flush-collapseProjectTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectTwo" data-bs-parent="#accordionFlushExample">
@@ -174,7 +171,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingProjectThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectThree" aria-expanded="false" aria-controls="flush-collapseProjectThree">
-                            Discord Environmentalism Bot&nbsp; <span class="badge bg-primary">Python3</span> &nbsp; <span class="badge bg-primary ">JavaScript</span> &nbsp; <span class="badge bg-primary ">Azure</span>
+                            Discord Environmentalism Bot &nbsp; <span class="badge bg-primary">Python3</span> &nbsp; <span class="badge bg-primary ">JavaScript</span> &nbsp; <span class="badge bg-primary ">Azure</span>
                         </button>
                     </h2>
                     <div id="flush-collapseProjectThree" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectThree" data-bs-parent="#accordionFlushExample">
@@ -294,6 +291,29 @@
 
         </div>
 
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+
+                <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+                
+                <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
+
+                <p class="text-muted justify-content-end">Beyond all things is the sea.</p>
+
+                <script>
+                    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+                    const d = new Date();
+                    let day = weekday[d.getDay()];
+                    document.getElementById("weekday").innerHTML = day;
+
+                    let year = d.getYear();
+                    document.getElementById("year").innerHTML = year+1900;
+                </script>
+
+            </footer>
+          </div>    
+
         <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -305,7 +325,7 @@
 
             function typeWriter() {
                 if (i < txt.length) {
-                    document.getElementById("demo").innerHTML += txt.charAt(i);
+                    document.getElementById("selftyping").innerHTML += txt.charAt(i);
                     i++;
                     setTimeout(typeWriter, speed);
                 }
