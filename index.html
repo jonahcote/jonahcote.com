@@ -316,31 +316,21 @@
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 
                 <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-                
+
                 <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
 
                 <p class="text-muted justify-content-end">Beyond all things is the sea.</p>
 
-                <!-- Use JavaScript to get day of the week and year -->
-                <script>
-                    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-                    const d = new Date();
-                    let day = weekday[d.getDay()];
-                    document.getElementById("weekday").innerHTML = day;
-
-                    let year = d.getYear();
-                    document.getElementById("year").innerHTML = year+1900;
-                </script>
-
             </footer>
         </div>    
+
+        <!-- JAVASCRIPT FOLLOWS BELOW -->
 
         <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
         <!-- Self typing text from W3Schools -->
-        <!-- Used in "about me" section -->
+        <!-- Used in "about me" section to type out traits -->
         <script>
             var TxtRotate = function(el, toRotate, period) {
             this.toRotate = toRotate;
@@ -398,6 +388,19 @@
             css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
             document.body.appendChild(css);
             };
+        </script>
+
+        <!-- Get day of the week and year modified from W3Schools -->
+        <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
+        <script>
+            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+            const d = new Date();
+            let day = weekday[d.getDay()];
+            document.getElementById("weekday").innerHTML = day;
+
+            let year = d.getYear();
+            document.getElementById("year").innerHTML = year+1900;
         </script>
     </body>
 </html>
