@@ -77,6 +77,9 @@
 
             <h2 class="">About Me</h2>
 
+            <!-- Emoji -->
+            <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
+
             <!-- Clarke quote -->
             <figure class="text-center">
                 <blockquote class="blockquote">
@@ -99,8 +102,6 @@
             <!-- Elevator pitch content -->
             <p>Hi! I'm Jonah, born and raised in Vermont's rugged <a class="text-decoration-none" href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>.</p>
             
-            <!-- Emoji -->
-            <p class="fs-1 text-center">⛷️ 🗺️ 💻</p>
         </div>
 
         <!-- Projects -->
@@ -389,6 +390,19 @@
 
             let year = d.getYear();
             document.getElementById("year").innerHTML = year+1900;
+        </script>
+
+        <!-- Toggletext -->
+        <!-- Used in laptop easter egg -->
+        <script>
+            function toggleText() {
+                var text = document.getElementById("demo");
+                if (text.style.display === "none") {
+                    text.style.display = "inline";
+                } else {
+                    text.style.display = "none";
+                }
+            }
         </script>
         
     </body>
