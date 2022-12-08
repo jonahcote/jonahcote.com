@@ -21,60 +21,30 @@
 <!-- Give the body padding and make it a responsive container at small sizes-->
 <body class="p-3 bg-light container-md">
     
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-light fs-5 rounded py-3 mb-4">
+    <!-- Navigation -->
+    <nav class="container">
+        <header class="d-flex justify-content-center py-3 mb-2">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./professional.html">Professional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./creative.html">Creative</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </header>
         
-        <div class="container-fluid">
-            
-            <a class="navbar-brand" href="./index.html">
-                <img src="./media/jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded text-primary">
-                <!-- &nbsp; Jonah Cote -->
-            </a>
-            
-            <!--Navbar hamburger menu for small screens-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!--Wide navbar content-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav me-auto pe-1 mb-lg-0">
-
-                    <!--Links-->
-                    <li class="nav-item">
-                        <a class="nav-link active fw-bold" aria-current="page" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./professional.html">Professional</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./creative.html">Creative</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
-                    </li>
-
-                    <!--Dropdown links-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hidden Link
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarSecretDropdown">
-                            <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Sneaky Link🕺</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                
-                <!-- Resume button -->
-                <a class="btn btn-outline-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
-                
-            </div>
-        </div>
     </nav>
+
 
     <!-- WIP Banner -->
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
