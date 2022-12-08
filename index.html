@@ -19,7 +19,7 @@
 </head>
 
 <!-- Give the body padding and make it a responsive container at small sizes-->
-<body class="p-3 bg-light container-md">
+<body class="p-3 bg-light container-lg">
     
     <!-- Navigation -->
     <nav class="container">
@@ -47,14 +47,14 @@
 
 
     <!-- WIP Banner -->
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-warning alert-dismissible fade show border-5" role="alert">
         <i class="bi bi-exclamation-diamond-fill"></i>
         <strong>Get your hard hat!</strong> This site is under construction.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+    </div>
 
     <!-- About -->
-    <div id="top" class="rounded-2 bg-white p-3">
+    <div id="top" class="rounded-2 bg-white p-3 my-4">
         <div class="row">
             <!-- Left column/content -->
             <div class="col-lg-8 col-sm-12">
@@ -88,7 +88,7 @@
                 <p>
                     My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>the future of cryptography</strong>, and <strong>penetration testing</strong>.
                 </p>
-                <p>
+                <p class="mb-0">
                     In my free time, my heart is in worldbuilding. My current pet projet is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 1000 years early and bringing Norse seiðr with them.
                 </p>
             </div>
@@ -96,6 +96,26 @@
             <div class="col-lg-4 col-sm-12 d-none d-lg-block">
                 <img src="media/humanjoshuatree.JPG" alt="A group of people mirroring the shape of a gnarled tree behind them with their arms" width="100%" class="rounded-2">
             </div>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row rounded-2">
+        <div class="col-md-6 col-sm-12">
+            <div class="alert alert-success border-0" role="alert">
+                <h4>Well done!</h4>
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+              </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="alert alert-primary border-0" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+              </div>
         </div>
     </div>
             
