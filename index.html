@@ -18,7 +18,7 @@
     </head>
     
     <!-- Give the body padding and make it a responsive container at small sizes-->
-    <body class="p-3 container-md">
+    <body class="p-3 bg-light container-md">
         
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3">
@@ -75,71 +75,69 @@
             </div>
         </nav>
         
-        <!-- Dirty space hack -->
-        <span>&nbsp;</span>
-        
-                <!-- About -->
-                <div id="top" class="rounded-2 bg-light p-3">
-                    <div class="row">
-                        <!-- Left column/content -->
-                        <div class="col-lg-8 col-sm-12">
-                            <!-- Emoji -->
-                            <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
-                            
-                            <!-- Clarke quote -->
-                            <figure class="text-center">
-                                <blockquote class="blockquote">
-                                    <p>Any sufficiently advanced technology is indistinguishable from <strong><span style="color:indigo" >magic.</span></strong> ✨</p>
-                                </blockquote>
-                                <figcaption class="blockquote-footer">
-                                    Arthur C. Clarke
-                                </figcaption>
-                            </figure>
-                            
-                            <!-- Self-typing text -->
-                            <p>
-                                I always wanted to grow up a 
-                                <span
-                                class="txt-rotate"
-                                data-period="2000"
-                                data-rotate='[ "magician.", "computer programmer.", "problem solver."]'></span> 
-                            </p>
-                            
-                            <!-- Elevator pitch content -->
-                            <p>
-                                Hi! I'm Jonah. I was born and raised in Vermont's rugged <a class="text-decoration-none" href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>
-                                (my first job was on a Christmas tree farm). Technology brought the world into my childhood bedroom, and I'm excited to be a part of bringing that world to even more people.
-                            </p>
-                            <p>
-                                My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>quantum-resistant cryptography</strong>, and <strong>penetration testing</strong>.
-                            </p>
-                            <p>
-                                In my free time, my heart is in worldbuilding. My current pet projet is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 1000 years early and bringing Norse seiðr with them.
-                            </p>
-                        </div>
-                        <!-- Joshua tree image -->
-                        <div class="col-lg-4 col-sm-12 d-none d-lg-block">
-                            <img src="media/humanjoshuatree.JPG" alt="" width="100%" class="rounded-2">
-                        </div>
-                    </div>
+        <!-- About -->
+        <div id="top" class="rounded-2 bg-white p-3">
+            <div class="row">
+                <!-- Left column/content -->
+                <div class="col-lg-8 col-sm-12">
+                    <!-- Emoji -->
+                    <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
+                    
+                    <!-- Clarke quote -->
+                    <figure class="text-center">
+                        <blockquote class="blockquote">
+                            <p>Any sufficiently advanced technology is indistinguishable from <strong><span style="color:indigo" >magic.</span></strong> ✨</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Arthur C. Clarke
+                        </figcaption>
+                    </figure>
+                    
+                    <!-- Self-typing text -->
+                    <p>
+                        I always wanted to grow up a 
+                        <span
+                        class="txt-rotate"
+                        data-period="2000"
+                        data-rotate='[ "magician.", "computer programmer.", "problem solver."]'></span> 
+                    </p>
+                    
+                    <!-- Elevator pitch content -->
+                    <p>
+                        Hi! I'm Jonah. I was born and raised in Vermont's rugged <a class="text-decoration-none" href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>
+                        (my first job was on a Christmas tree farm). Technology brought the world into my childhood bedroom, and I'm excited to be a part of bringing that world to even more people.
+                    </p>
+                    <p>
+                        My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>quantum-resistant cryptography</strong>, and <strong>penetration testing</strong>.
+                    </p>
+                    <p>
+                        In my free time, my heart is in worldbuilding. My current pet projet is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 1000 years early and bringing Norse seiðr with them.
+                    </p>
                 </div>
+                <!-- Joshua tree image -->
+                <div class="col-lg-4 col-sm-12 d-none d-lg-block">
+                    <img src="media/humanjoshuatree.JPG" alt="A group of people mirroring the shape of a gnarled tree behind them with their arms" width="100%" class="rounded-2">
+                </div>
+            </div>
+        </div>
                 
         <!-- Footer -->
-        <div class="container">
-                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                        
-                        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-                        
-                        <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-                        
-                        <p class="text-muted justify-content-end">
-                            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
-                            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-                        </p>
-                        
-                    </footer>
-        </div>    
+        <footer class="">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">          
+                <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+                
+                <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
+                
+                <p class="text-muted justify-content-end">
+                    <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+                </p>
+            </div> 
+        </footer>
+        
+                    
+           
                 
         <!-- JAVASCRIPT FOLLOWS BELOW -->
                 
