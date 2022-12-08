@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="authors" content="Jonah Cote">
     
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS and icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <!-- Title and favicon -->
     <title>Jonah Cote</title>
     <link rel="icon" type="image/x-icon" href="./favicon.png">
@@ -21,7 +22,7 @@
 <body class="p-3 container-md">
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3 mb-4">
         
         <div class="container-fluid">
             
@@ -37,8 +38,9 @@
             
             <!--Wide navbar content-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
+
                     <!--Links-->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
@@ -55,7 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link active fw-bold" aria-current="page" href="./contact.html">Contact</a>
                     </li>
-                    
+
                     <!--Dropdown links-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,84 +69,61 @@
                     </li>
                 </ul>
                 
-                <form class="d-flex">
-                    <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
-                </form>
+                <!-- Resume button -->
+                <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
                 
             </div>
         </div>
     </nav>
-    
-    <!-- Dirty space hack -->
-    <span>&nbsp;</span> 
 
     <!-- Main content -->
-    <div class="p-3 rounded bg-light text-center">
-        <h1 class="display-6">Let's Connect!</h1>
+    <div class="p-3 m-3 rounded text-center">
 
         <div class="row">
 
             <!-- Email -->
-            <div class="col">
-                <a class="p-3 text-decoration-none" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">
-                    <div class="">
-                        <i class="h1 bi bi-envelope"></i>
-                        <br>
-                        <br>
-                        <h4 class="">Email</h4>
-                        <p class="bg-muted">Most-checked communication method.</p>
-                    </div>
+            <div class="mx-3 col bg-light rounded-2">
+                <i class="bi-envelope-at" style="font-size: 2rem; color: cornflowerblue;"></i>
+                <a class="text-decoration-none" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">
+                    <h4 class="">Email</h4>
+                    <p class="bg-muted">Most-checked communication method.</p>
                 </a>
             </div>
 
             <!-- GitHub -->
-            <div class="col">
-                <a class="p-3 text-reset text-decoration-none" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">
-                    <div class="">
-                        <i class="h1 bi bi-github"></i>
-                        <br>
-                        <br>
-                        <h4>GitHub</h4>
-                        
-                    </div>
+            <div class="mx-3 my-auto col bg-light rounded-2">
+                <i class="bi-github" style="font-size: 2rem; color: rgb(80, 80, 80)"></i>
+                <a class="text-reset text-decoration-none" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">
+                    <h4>GitHub</h4>
+                    <p class="bg-muted">Source code for this website-and more.</p>
                 </a>
             </div>
 
             <!-- LinkedIn -->
-            <div class="col">
-                <a class="p-3 text-reset text-decoration-none" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">
-                    <div class="">
-                        <i class="h1 bi bi-linkedin"></i>
-                        <br>
-                        <br>
-                        <h4 class="">LinkedIn</h4>
-                        
-                    </div>
+            <div class="mx-3 my-auto col bg-light rounded-2">
+                <i class="bi-linkedin" style="font-size: 2rem; color: rgb(80, 80, 80)"></i>
+                <a class="text-reset text-decoration-none" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">
+                    <h4 class="">LinkedIn</h4>
+                    <p class="bg-muted">Let's connect!</p>
                 </a>
             </div>
 
         </div>
     </div>
-
-    <!-- Dirty space hack -->
-    <span>&nbsp;</span>
             
     <!-- Footer -->
-    <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    
-                    <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-                    
-                    <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-                    
-                    <p class="text-muted justify-content-end">
-                        <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
-                        <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-                    </p>
-                    
-                </footer>
-    </div>    
+    <footer class="d-flex justify-content-between border-top py-3 mt-4">
+            
+        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+        
+        <p class="text-muted justify-content-end">
+            <em>If you prefer tinier links: </em>
+            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
+            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        </p>
+        
+    </footer>   
             
     <!-- JAVASCRIPT FOLLOWS BELOW -->
             

@@ -1,235 +1,232 @@
-  <!doctype html>
-    <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="description" content="Jonah Cote, UVM student software developer portfolio projects site.">
-        <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="authors" content="Jonah Cote">
-        
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
-        <!-- Title and favicon -->
-        <title>Jonah Cote</title>
-        <link rel="icon" type="image/x-icon" href="./favicon.png">
-        
-    </head>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Jonah Cote, UVM student software developer portfolio projects site.">
+    <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Jonah Cote">
     
-    <!-- Give the body padding and make it a responsive container at small sizes-->
-    <body class="p-3 bg-light container-md">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Title and favicon -->
+    <title>Jonah Cote</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    
+</head>
+
+<!-- Give the body padding and make it a responsive container at small sizes-->
+<body class="p-3 bg-light container-md">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3 mb-4">
         
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3">
+        <div class="container-fluid">
             
-            <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./media/jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
+                Jonah Cote
+            </a>
+            
+            <!--Navbar hamburger menu for small screens-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!--Wide navbar content-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!--Links-->
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./professional.html">Professional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./creative.html">Creative</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
+                    </li>
+
+                    <!--Dropdown links-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hidden Link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarSecretDropdown">
+                            <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Sneaky Link🕺</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 
-                <a class="navbar-brand" href="./index.html">
-                    <img src="./media/jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
-                    Jonah Cote
-                </a>
+                <!-- Resume button -->
+                <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
                 
-                <!--Navbar hamburger menu for small screens-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!--Wide navbar content-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
-                        <!--Links-->
-                        <li class="nav-item">
-                            <a class="nav-link active fw-bold" aria-current="page" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./professional.html">Professional</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./creative.html">Creative</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
-                        </li>
-                        
-                        <!--Dropdown links-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hidden Link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarSecretDropdown">
-                                <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Sneaky Link🕺</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <form class="d-flex">
-                        <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
-                    </form>
-                    
-                </div>
-            </div>
-        </nav>
-        
-        <!-- About -->
-        <div id="top" class="rounded-2 bg-white p-3">
-            <div class="row">
-                <!-- Left column/content -->
-                <div class="col-lg-8 col-sm-12">
-                    <!-- Emoji -->
-                    <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
-                    
-                    <!-- Clarke quote -->
-                    <figure class="text-center">
-                        <blockquote class="blockquote">
-                            <p>Any sufficiently advanced technology is indistinguishable from <strong><span style="color:indigo" >magic.</span></strong> ✨</p>
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                            Arthur C. Clarke
-                        </figcaption>
-                    </figure>
-                    
-                    <!-- Self-typing text -->
-                    <p>
-                        I always wanted to grow up a 
-                        <span
-                        class="txt-rotate"
-                        data-period="2000"
-                        data-rotate='[ "magician.", "computer programmer.", "problem solver."]'></span> 
-                    </p>
-                    
-                    <!-- Elevator pitch content -->
-                    <p>
-                        Hi! I'm Jonah. I was born and raised in Vermont's rugged <a class="text-decoration-none" href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>
-                        (my first job was on a Christmas tree farm). Technology brought the world into my childhood bedroom, and I'm excited to be a part of bringing that world to even more people.
-                    </p>
-                    <p>
-                        My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>quantum-resistant cryptography</strong>, and <strong>penetration testing</strong>.
-                    </p>
-                    <p>
-                        In my free time, my heart is in worldbuilding. My current pet projet is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 1000 years early and bringing Norse seiðr with them.
-                    </p>
-                </div>
-                <!-- Joshua tree image -->
-                <div class="col-lg-4 col-sm-12 d-none d-lg-block">
-                    <img src="media/humanjoshuatree.JPG" alt="A group of people mirroring the shape of a gnarled tree behind them with their arms" width="100%" class="rounded-2">
-                </div>
             </div>
         </div>
+    </nav>
+
+    <!-- About -->
+    <div id="top" class="rounded-2 bg-white p-3 m-3">
+        <div class="row">
+            <!-- Left column/content -->
+            <div class="col-lg-8 col-sm-12">
+                <!-- Emoji -->
+                <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
                 
-        <!-- Footer -->
-        <footer class="">
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">          
-                <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+                <!-- Clarke quote -->
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>Any sufficiently advanced technology is indistinguishable from <strong><span style="color:indigo" >magic.</span></strong> ✨</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Arthur C. Clarke
+                    </figcaption>
+                </figure>
                 
-                <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-                
-                <p class="text-muted justify-content-end">
-                    <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
-                    <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+                <!-- Self-typing text -->
+                <p>
+                    I always wanted to grow up a 
+                    <span
+                    class="txt-rotate"
+                    data-period="2000"
+                    data-rotate='[ "magician.", "computer programmer.", "problem solver."]'></span> 
                 </p>
-            </div> 
-        </footer>
+                
+                <!-- Elevator pitch content -->
+                <p>
+                    Hi! I'm Jonah. I was born and raised in Vermont's rugged <a class="text-decoration-none" href="https://www.google.com/maps/place/Canaan,+VT/@44.8724588,-72.3576038,8.1z/data=!4m5!3m4!1s0x4cb69396f9542a23:0xea8d6410a58b4c77!8m2!3d44.9964934!4d-71.5383736" target="_blank" rel="noopener noreferrer">Northeast Kingdom</a>
+                    (my first job was on a Christmas tree farm). Technology brought the world into my childhood bedroom, and I'm excited to be a part of bringing that world to even more people.
+                </p>
+                <p>
+                    My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>quantum-resistant cryptography</strong>, and <strong>penetration testing</strong>.
+                </p>
+                <p>
+                    In my free time, my heart is in worldbuilding. My current pet projet is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 1000 years early and bringing Norse seiðr with them.
+                </p>
+            </div>
+            <!-- Joshua tree image -->
+            <div class="col-lg-4 col-sm-12 d-none d-lg-block">
+                <img src="media/humanjoshuatree.JPG" alt="A group of people mirroring the shape of a gnarled tree behind them with their arms" width="100%" class="rounded-2">
+            </div>
+        </div>
+    </div>
+            
+    <!-- Footer -->
+    <footer class="d-flex justify-content-between border-top py-3 mt-4">
         
+        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+        
+        <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
+        
+        <p class="text-muted justify-content-end">
+            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
+            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        </p>
+        
+    </footer>
+
+    <!-- JAVASCRIPT FOLLOWS BELOW -->
+            
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> </script>
+            
+    <!-- Self typing text from W3Schools -->
+    <!-- Used in "about me" section to type out traits -->
+    <script>
+                var TxtRotate = function(el, toRotate, period) {
+                    this.toRotate = toRotate;
+                    this.el = el;
+                    this.loopNum = 0;
+                    this.period = parseInt(period, 10) || 2000;
+                    this.txt = '';
+                    this.tick();
+                    this.isDeleting = false;
+                };
+                
+                TxtRotate.prototype.tick = function() {
+                    var i = this.loopNum % this.toRotate.length;
+                    var fullTxt = this.toRotate[i];
                     
-           
-                
-        <!-- JAVASCRIPT FOLLOWS BELOW -->
-                
-        <!-- Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                
-        <!-- Self typing text from W3Schools -->
-        <!-- Used in "about me" section to type out traits -->
-        <script>
-                    var TxtRotate = function(el, toRotate, period) {
-                        this.toRotate = toRotate;
-                        this.el = el;
-                        this.loopNum = 0;
-                        this.period = parseInt(period, 10) || 2000;
-                        this.txt = '';
-                        this.tick();
+                    if (this.isDeleting) {
+                        this.txt = fullTxt.substring(0, this.txt.length - 1);
+                    } else {
+                        this.txt = fullTxt.substring(0, this.txt.length + 1);
+                    }
+                    
+                    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+                    
+                    var that = this;
+                    var delta = 300 - Math.random() * 100;
+                    
+                    if (this.isDeleting) { delta /= 2; }
+                    
+                    if (!this.isDeleting && this.txt === fullTxt) {
+                        delta = this.period;
+                        this.isDeleting = true;
+                    } else if (this.isDeleting && this.txt === '') {
                         this.isDeleting = false;
-                    };
+                        this.loopNum++;
+                        delta = 500;
+                    }
                     
-                    TxtRotate.prototype.tick = function() {
-                        var i = this.loopNum % this.toRotate.length;
-                        var fullTxt = this.toRotate[i];
-                        
-                        if (this.isDeleting) {
-                            this.txt = fullTxt.substring(0, this.txt.length - 1);
-                        } else {
-                            this.txt = fullTxt.substring(0, this.txt.length + 1);
-                        }
-                        
-                        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-                        
-                        var that = this;
-                        var delta = 300 - Math.random() * 100;
-                        
-                        if (this.isDeleting) { delta /= 2; }
-                        
-                        if (!this.isDeleting && this.txt === fullTxt) {
-                            delta = this.period;
-                            this.isDeleting = true;
-                        } else if (this.isDeleting && this.txt === '') {
-                            this.isDeleting = false;
-                            this.loopNum++;
-                            delta = 500;
-                        }
-                        
-                        setTimeout(function() {
-                            that.tick();
-                        }, delta);
-                    };
-                    
-                    window.onload = function() {
-                        var elements = document.getElementsByClassName('txt-rotate');
-                        for (var i=0; i<elements.length; i++) {
-                            var toRotate = elements[i].getAttribute('data-rotate');
-                            var period = elements[i].getAttribute('data-period');
-                            if (toRotate) {
-                                new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                            }
-                        }
-                        // INJECT CSS
-                        var css = document.createElement("style");
-                        css.type = "text/css";
-                        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-                        document.body.appendChild(css);
-                    };
-        </script>
+                    setTimeout(function() {
+                        that.tick();
+                    }, delta);
+                };
                 
-        <!-- Get day of the week and year modified from W3Schools -->
-        <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
-        <script>
-                    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                    
-                    const d = new Date();
-                    let day = weekday[d.getDay()];
-                    document.getElementById("weekday").innerHTML = day;
-                    
-                    let year = d.getYear();
-                    document.getElementById("year").innerHTML = year+1900;
-        </script>
-                
-        <!-- Toggletext -->
-        <!-- Used in laptop easter egg -->
-        <script>
-                    function toggleText() {
-                        var text = document.getElementById("demo");
-                        if (text.style.display === "none") {
-                            text.style.display = "inline";
-                        } else {
-                            text.style.display = "none";
+                window.onload = function() {
+                    var elements = document.getElementsByClassName('txt-rotate');
+                    for (var i=0; i<elements.length; i++) {
+                        var toRotate = elements[i].getAttribute('data-rotate');
+                        var period = elements[i].getAttribute('data-period');
+                        if (toRotate) {
+                            new TxtRotate(elements[i], JSON.parse(toRotate), period);
                         }
                     }
-        </script>
+                    // INJECT CSS
+                    var css = document.createElement("style");
+                    css.type = "text/css";
+                    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+                    document.body.appendChild(css);
+                };
+    </script>
+            
+    <!-- Get day of the week and year modified from W3Schools -->
+    <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
+    <script>
+                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 
-    </body>
+                const d = new Date();
+                let day = weekday[d.getDay()];
+                document.getElementById("weekday").innerHTML = day;
+                
+                let year = d.getYear();
+                document.getElementById("year").innerHTML = year+1900;
+    </script>
+            
+    <!-- Toggletext -->
+    <!-- Used in laptop easter egg -->
+    <script>
+                function toggleText() {
+                    var text = document.getElementById("demo");
+                    if (text.style.display === "none") {
+                        text.style.display = "inline";
+                    } else {
+                        text.style.display = "none";
+                    }
+                }
+    </script>
+            
+</body>
 </html>
