@@ -78,14 +78,203 @@
     <!-- Dirty space hack -->
     <span>&nbsp;</span>
     
-    <!-- Main content -->
-    <div class="container">
-        
-        <div class="bg-light p-3 rounded">
-            TEMPLATE
-        </div>
-
+<!-- Projects -->
+<div id="projects" class="p-3">
+            
+    <h2 class="">Select Projects</h2>
+    
+    <!--Accordian-->
+    <div class="accordion accordion-flush" id="projectsAccordian">
+        <!-- US drone strike analysis -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingProjectOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectOne" aria-expanded="false" aria-controls="flush-collapseProjectOne">
+                    US Drone Strike Analysis 
+                    <span class="d-none d-sm-inline">
+                        <span class="badge bg-primary mx-1">C++</span> <span class="badge bg-primary">Python3</span>
+                    </span>
+                </button>
+            </h2>
+            <div id="flush-collapseProjectOne" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <strong>Misson:</strong><br>
+                    <ul>
+                        <li>Better understand of the scale of the US engagement in Afghanistan</li>
+                        <li>Build working knowledge of Big-O complexity</li>
+                    </ul>
+                    <strong>Work completed:</strong><br>
+                    <p>This project analyzed and manipulated data from the non-profit <a href="https://acleddata.com/about-acled/" target="_blank" rel="noopener noreferrer">Armed Conflict Location & Event Data Project (ACLED)</a>.
+                        First, Python was used to strip unneeded fields, narrow the data, and assign new unique IDs.
+                        Next, the C++ program read the file into a vector of objects of a custom class, and used several methods to pull out insights, such as trends in targets and locations, and total casualties.
+                        A variety of sorting algorithms, trees, and hash functions were compared for space and time efficiency.</p>
+                        <strong>Lessons learned:</strong><br>
+                        <ul>
+                            <li>To give debugging a healthy portion of your time budget</li>
+                            <li>How to reverse a linked list🎉</li>
+                            <li>Bubble sort is pretty terrible most of the time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- UVM Photo Club Website -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingProjectTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectTwo" aria-expanded="false" aria-controls="flush-collapseProjectTwo">
+                        UVM Photo Club Website 
+                        <span class="d-none d-sm-inline">
+                            <span class="badge bg-primary mx-1">HTML/CSS</span> <span class="badge bg-primary">PHP</span> <span class="badge bg-primary mx-1">SQL</span> <span class="badge bg-success">View live!</span>
+                        </span>
+                    </button>
+                </h2>
+                <div id="flush-collapseProjectTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <strong>Misson:</strong><br>
+                        <ul>
+                            <li>Refresh on basic HTML/CSS</li>
+                            <li>Build knowledge in SQL databases and automated email</li>
+                            <li>Curate a creative online face for the UVM Photography Club</li>
+                        </ul>
+                        <strong>Work completed:</strong>
+                        <p>This project built my confidence in several technologies, including</p>
+                        <ul>
+                            <li>CSS animations on the homepage to create a "developing film" effect</li>
+                            <li>PHP arguments on the contact page accessing a SQL database to populate member information</li>
+                            <li>PHP for form input validation</li>
+                            <li>Using POST to send data to another database of prospective members, with a bit of JavaScript to send them an automated welcome email.</li>
+                        </ul>
+                        <p><a href="https://jwcote.w3.uvm.edu/cs008/final/index.php" target="_blank" rel="noopener noreferrer">View the project here.</a></p>
+                        <strong>Lessons learned:</strong><br>
+                        <ul>
+                            <li>Team communication and updates are critical, especially when using Git</li>
+                            <li>Input validation on the web is a serious concern</li>
+                            <li>Build for accessibility and screenreaders first and foremost</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Discord environmentalism bot -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingProjectThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProjectThree" aria-expanded="false" aria-controls="flush-collapseProjectThree">
+                        Discord Environmentalism Bot 
+                        <span class="d-none d-sm-inline">
+                            <span class="badge bg-primary mx-1">Python3</span> <span class="badge bg-primary">JavaScript</span> <span class="badge bg-primary mx-1">Azure</span>
+                            
+                        </span>
+                    </button>
+                </h2>
+                <div id="flush-collapseProjectThree" class="accordion-collapse collapse" aria-labelledby="flush-headingProjectThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <strong>Misson:</strong><br>
+                        <ul>
+                            <li>See how quickly I can cobble something together (this was a 36 hour hackathon)</li>
+                            <li>Learn how to use APIs</li>
+                            <li>Build something my friends and I could actually use</li>
+                        </ul>
+                        <strong>Work completed:</strong><br>
+                        <p>The hackathon was a wild place--I'd never been in the same building with so many other people passionate about tech before.
+                            After a bit of brainstorming, I settled on a project to leverage competitive teenagers to help improve the environment.
+                            The program, EcoBot, could be added to channels of the text client Discord and display a leaderboard of the members of that friend group.
+                            Different environmentally-friendly actions earned points on the leaderboard.</p>
+                            <p>The program itself was written primarily in Python, with JavaScript connecting the logic to Discord's API.  The leaderboard itself was stored in an SQL database on Azure.  After lots of StackOverflow and a power nap, the bot worked in time for judging.</p>
+                            <strong>Lessons learned:</strong><br>
+                            <ul>
+                                <li>Sometimes the best thing to do is just start coding</li>
+                                <li>The other competitors with cases of Red Bull were onto something⚡</li>
+                                <li>Team communication and updates are critical, especially when using Git</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
     </div>
+</div>
+        
+<!-- Skills -->
+<div id="skills" class="rounded-2 bg-light p-3">
+            
+            <h2 class="">Skills</h2>
+            
+            <!-- Accordian -->
+            <div class="accordion accordion-flush" id="skillsAccordian">
+                <!-- Primary skills -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSkillsOne">
+                        <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSkillsOne" aria-expanded="false" aria-controls="flush-collapseSkillsOne">
+                            <span>Primary Languages/Technologies</span>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSkillsOne" class="accordion-collapse collapse bg-light" aria-labelledby="flush-headingSkillsOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>C++</li>
+                                <li>Python 3
+                                    <ul>
+                                        <li>Flask</li>
+                                        <li>PEP8 Style</li>
+                                    </ul>
+                                </li>
+                                <li>Java</li>
+                                <li>HTML/CSS
+                                    <ul>
+                                        <li>PHP</li>
+                                        <li>Bootstrap</li>
+                                        <li>Mobile-first development</li>
+                                    </ul>
+                                </li>
+                                <li>SQL</li>
+                                <li>Git/GitHub</li>
+                                <li>Notion</li>
+                                <li>Excel</li>
+                                <li>Mathematica</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Developing skills-->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSkillsTwo">
+                        <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSkillsTwo" aria-expanded="false" aria-controls="flush-collapseSkillsTwo">
+                            Developing Skills
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSkillsTwo" class="accordion-collapse collapse bg-light" aria-labelledby="flush-headingSkillsTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Ruby</li>
+                                <li>Azure</li>
+                                <li>AWS</li>
+                                <li>TensorFlow (ML)</li>
+                                <li>Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Soft skills -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSkillsThree">
+                        <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSkillsThree" aria-expanded="false" aria-controls="flush-collapseSkillsThree">
+                            Soft Skills
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSkillsThree" class="accordion-collapse collapse bg-light" aria-labelledby="flush-headingSkillsThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Strong communicator and presenter</li>
+                                <li>Independenly motivated and organized</li>
+                                <li>Extroverted team player</li>
+                                <li>Creative approach to problem solving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+      
+<!--Experience-->
+<div id="experience" class="p-3">
+    <h2 class="">Experience</h2>
+    <p>Please see <a href="./Jonah-Cote-Resume-2022.pdf">resume</a>.</p>
+</div>
             
     <!-- Footer -->
     <div class="container">
