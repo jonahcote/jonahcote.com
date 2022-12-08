@@ -1,123 +1,182 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="description" content="Jonah Cote in the news.">
-        <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington, news">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="authors" content="Jonah Cote">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Jonah Cote, UVM student software developer portfolio projects site.">
+    <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Jonah Cote">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Title and favicon -->
+    <title>Jonah Cote</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    
+</head>
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Give the body padding and make it a responsive container at small sizes-->
+<body class="p-3 bg-light container-md">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3 mb-4">
+        
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="./index.html">
+                <img src="./media/jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
+                Jonah Cote
+            </a>
+            
+            <!--Navbar hamburger menu for small screens-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!--Wide navbar content-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!-- Title and favicon -->
-        <title>In The News</title>
-        <link rel="icon" type="image/x-icon" href="./favicon.png">
+                <ul class="navbar-nav me-auto mb-2 me-1 mb-lg-0">
 
-    </head>
+                    <!--Links-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./professional.html">Professional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="./creative.html">Creative</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
+                    </li>
 
-    <!-- Give the body padding and make it a responsive container at small sizes-->
-    <body class="p-3 container-md d-flex flex-column min-vh-100">
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark rounded p-3">
-
-            <div class="container-fluid">
+                    <!--Dropdown links-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hidden Link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarSecretDropdown">
+                            <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Sneaky Link🕺</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 
-                <a class="navbar-brand" href="./index.html">
-                    <img src="./media/jonah_flat.png" alt="" width="30" height="30" class="d-inline-block align-text-top rounded">
-                    Jonah Cote
-                </a>
-    
-                <!--Navbar hamburger menu for small screens-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <!--Wide navbar content-->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
-                        <!--Links-->
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./news.html">In the News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active fw-bold" aria-current="page" href="./creative.html">Creative</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
-                        </li>
-    
-                        <!--Dropdown links-->
-                        <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarSecretDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Hidden Link
-                           </a>
-                           <ul class="dropdown-menu" aria-labelledby="navbarSecretDropdown">
-                           <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Sneaky Link🕺</a></li>
-                           </ul>
-                        </li>
-                    </ul>
-    
-                    <form class="d-flex">
-                        <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
-                    </form>
-    
-                </div>
+                <!-- Resume button -->
+                <a class="btn btn-success" href="./Jonah-Cote-Resume-2022.pdf" role="button">Download Resume</a>
+                
             </div>
-        </nav>
+        </div>
+    </nav>
+    
+    <!-- Main content -->
+    <div class="container">
+        
+        <!-- Create three columns -->
+        <div class="row">
+            
+            <!-- Left column -->
+            <div class="col-md-4 mb-2">
+                
+                <!-- Project 1 -->
+                <div class="bg-white h-100 p-3 rounded text-center">
 
-        <!-- Dirty space hack -->
-        <span>&nbsp;</span>
+                    <a href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3"><img src="media/srov_teaser.png" alt="" width="60%" class="p-2"></a>
 
-        <span>&nbsp;</span>
+                    <h2 class="mt-2">The Second Republic of Vermont</h2>
+                    <div class="text-start">
+                        <p><em>In 1006, Icelandic explorer Leif Erikson discovered North America...</em></p> 
+                        <p><strong>What if he returned</strong>, settled in Montpelier, and brough Norse magic with him?</p>
+                        <p><strong>An alternate history</strong> where Vermont remains an independent nation to the present day, and mundane burearuracies struggle to manage the unpredible arcane.</p>
+                        <p><strong>A work in progress wiki</strong> encompassing the history, geography, and culture of the Second Republic of Vermont.</p>
+                    </div>
+                    <a class="btn btn-primary mb-3" href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer">Dive In</a>
+                </div>
+                
+            </div>
+            
+            <!-- Middle column -->
+            <div class="col-md-4 mb-2">
+                
+                <div class="bg-white h-100 p-3 rounded text-center">
 
-        <!-- Main content -->
-        <p class="text-center">
-            ⚠️ This page is a work in progress. ⚠️
+                    <img src="media/music_teaser.jpg" alt="Upward look of tree branches outlining a blue cloudy sky" width="60%" class="p-2">
+
+                    <h2 class="mt-2">Musical Project</h2>
+                    <p class="m-5">Coming sooner.</p>
+                    <button type="button mb-3" class="btn btn-secondary" disabled>Closed</button>
+                </div>
+                
+            </div>
+
+            <!-- Right column -->
+            <div class="col-md-4">
+                
+                <div class="bg-white h-100 p-3 rounded text-center">
+
+                    <img src="media/gallery teaser.jpg" alt="" width="60%" class="p-2">
+
+                    <h2 class="mt-2">Visual Gallery</h2>
+                    <p class="m-5">Coming later.</p>
+                    <button type="button mb-3" class="btn btn-secondary" disabled>Closed</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+            
+    <!-- Footer -->
+    <footer class="d-none d-md-flex justify-content-between border-top pt-2 mt-3 fixed-bottom bg-light container-md">
+        
+        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+        
+        <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
+        
+        <p class="text-muted justify-content-end">
+            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
+            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </p>
         
-        <span>&nbsp;</span>
-
-        <!-- Footer -->
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto">
-
-                <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-
-                <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-
-                <p class="text-muted justify-content-end">
-                    <a class="p-1 text-reset " href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
-                    <a class="p-1 text-reset " href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a class="p-1 text-reset " hrmf="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-                </p>
-
-            </footer>
-        </div>    
-
-        <!-- JAVASCRIPT FOLLOWS BELOW -->
-
-        <!-- Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-        <!-- Get day of the week and year modified from W3Schools -->
-        <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
-        <script>
-            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-            const d = new Date();
-            let day = weekday[d.getDay()];
-            document.getElementById("weekday").innerHTML = day;
-
-            let year = d.getYear();
-            document.getElementById("year").innerHTML = year+1900;
-        </script>
-        
-    </body>
+    </footer>
+            
+    <!-- JAVASCRIPT FOLLOWS BELOW -->
+            
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            
+    <!-- Get day of the week and year modified from W3Schools -->
+    <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
+    <script>
+                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                
+                const d = new Date();
+                let day = weekday[d.getDay()];
+                document.getElementById("weekday").innerHTML = day;
+                
+                let year = d.getYear();
+                document.getElementById("year").innerHTML = year+1900;
+    </script>
+            
+    <!-- Toggletext -->
+    <!-- Used in laptop easter egg -->
+    <script>
+                function toggleText() {
+                    var text = document.getElementById("demo");
+                    if (text.style.display === "none") {
+                        text.style.display = "inline";
+                    } else {
+                        text.style.display = "none";
+                    }
+                }
+    </script>
+            
+</body>
 </html>
