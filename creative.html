@@ -19,29 +19,30 @@
 </head>
 
 <!-- Give the body padding and make it a responsive container at small sizes-->
-<body class="p-3 bg-dark container-lg">
+<body class="p-3 bg-light container-lg">
     
     <!-- Navigation -->
     <nav class="container">
         <header class="d-flex justify-content-center py-3 mb-2">
           <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link text-warning" aria-current="page" href="./index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" aria-current="page" href="./professional.html">Professional</a>
+                <a class="nav-link" aria-current="page" href="./professional.html">Professional</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active bg-warning text-dark" aria-current="page" href="./creative.html">Creative</a>
+                <a class="nav-link active" aria-current="page" href="./creative.html">Creative</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" aria-current="page" href="./blog.html">Blog</a>
+                <a class="nav-link" aria-current="page" href="./blog.html">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" aria-current="page" href="./contact.html">Contact</a>
+                <a class="nav-link" aria-current="page" href="./contact.html">Contact</a>
             </li>
           </ul>
         </header>
+        
     </nav>
     
     <!-- Main content -->
@@ -50,80 +51,71 @@
         <!-- Create three columns -->
         <div class="row">
             
-            <!-- Left column -->
-            <div class="col-md-4 mb-2 border-light border-5">
-                
-                <div class="h-100 rounded-2 text-center text-white">
-
+            <!-- Visual Gallery -->
+            <div class="col-md-4 mb-2 h-100 rounded-2 text-center text-muted">
+                <div class="alert alert-secondary border-5 text-muted">
                     <img src="media/gallery teaser.jpg" alt="" width="80%" class="p-1" style="filter: grayscale(100%);">
 
-                    <h2 class="mt-4 fw-bold fs-4 text-white-50">Visual Gallery</h2>
+                    <h2 class="mt-4 fw-bold fs-4">Visual Gallery</h2>
 
-                    <p class="m-5 fs-5 text-white-50">Coming soon.</p>
+                    <p class="m-5 fs-5">Coming soon.</p>
                     <div class="d-grid">
                         <a class="btn btn-secondary disabled mb-4 mx-3" role="button" aria-disabled="true">Closed</a>
                     </div>
                 </div>
-
             </div>
-            
-            <!-- Middle column -->
-            <div class="col-md-4 mb-2 border-light border-5">
 
-                <!-- Project 1 -->
-                <div class="h-100 rounded-2 text-center text-white">
-                    <a href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer">
+            <!-- Second Republic of Vermont -->
+            <div class="col-md-4 mb-2 h-100 rounded-2 text-center">
+                <div class="alert alert-primary border-5">
+                    <a href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer" class="text-reset text-decoration-none">
                         <img src="media/srov_teaser.png" alt="" width="80%" class="">
+                        <h2 class="mt-2 fw-bold fs-4 px-4 py-2">The Second Republic of Vermont</h2>
                     </a>
-
-                    <h2 class="mt-2 fw-bold fs-4 px-4 py-2">The Second Republic of Vermont</h2>
 
                     <div class="text-start px-4">
                         <p><em>In 1006, Icelandic explorer Leif Erikson discovered North America...</em></p>
-                        <p><strong class="text-warning">What if he returned</strong>, settled in Montpelier, and brough Norse magic with him?</p>
-                        <p><strong class="text-warning">An alternate history</strong> where Vermont remains an independent nation to the present day, and mundane bureaucracies struggle to manage the unpredictable arcane.</p>
-                        <p><strong class="text-warning">A work in progress wiki</strong> encompassing the history, geography, and culture of the Second Republic of Vermont and those who live there.</p>
+                        <p><strong class="">What if he returned</strong>, settled in Montpelier, and brough Norse magic with him?</p>
+                        <p><strong class="">An alternate history</strong> where Vermont remains an independent nation to the present day, and mundane bureaucracies struggle to manage the unpredictable arcane.</p>
+                        <p><strong class="">A work in progress wiki</strong> encompassing the history, geography, and culture of the Second Republic of Vermont and those who live there.</p>
                     </div>
                     <div class="d-grid">
-                        <a class="btn btn-outline-warning mx-3" href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer">Dive In</a>
+                        <a class="btn btn-primary mx-3" href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer">Dive In</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Right column -->
-            <div class="col-md-4 mb-2 border-light border-5">
-                
-                <div class="h-100 rounded-2 text-center text-white">
-
+            <!-- Untitled Music Project -->
+            <div class="col-md-4 mb-2 h-100 rounded-2 text-center">
+                <div class="alert alert-secondary border-5 text-muted">
                     <img src="media/music_teaser.jpg" alt="Upward look of tree branches outlining a blue cloudy sky" width="80%" class="p-1" style="filter: grayscale(100%);">
 
-                    <h2 class="mt-4 fw-bold fs-4 text-white-50">Untitled Music Project</h2>
+                    <h2 class="mt-4 fw-bold fs-4">Untitled Music Project</h2>
 
-                    <p class="m-5 fs-5 text-white-50">Coming later.</p>
+                    <p class="m-5 fs-5">Coming later.</p>
                     <div class="d-grid">
                         <a class="btn btn-secondary disabled mb-4 mx-3" role="button" aria-disabled="true">Closed</a>
                     </div>
                 </div>
-                
             </div>
 
         </div>
 
     </div>
-            
+    
     <!-- Footer -->
-    <footer class="d-none d-md-flex justify-content-between pt-2 fixed-bottom container-md bg-dark">
+    <footer class="d-none d-md-flex justify-content-between border-top pt-2 mt-3 fixed-bottom bg-light container-lg">
         
         <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-        
+
         <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-        
+
         <p class="text-muted justify-content-end">
             <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
             <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </p>
-        
+
     </footer>
             
     <!-- JAVASCRIPT FOLLOWS BELOW -->
@@ -134,27 +126,27 @@
     <!-- Get day of the week and year modified from W3Schools -->
     <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
     <script>
-                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                
-                const d = new Date();
-                let day = weekday[d.getDay()];
-                document.getElementById("weekday").innerHTML = day;
-                
-                let year = d.getYear();
-                document.getElementById("year").innerHTML = year+1900;
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday🐪","Thursday","Friday","Saturday"];
+        
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        document.getElementById("weekday").innerHTML = day;
+        
+        let year = d.getYear();
+        document.getElementById("year").innerHTML = year+1900;
     </script>
             
     <!-- Toggletext -->
     <!-- Used in laptop easter egg -->
     <script>
-                function toggleText() {
-                    var text = document.getElementById("demo");
-                    if (text.style.display === "none") {
-                        text.style.display = "inline";
-                    } else {
-                        text.style.display = "none";
-                    }
-                }
+        function toggleText() {
+            var text = document.getElementById("demo");
+            if (text.style.display === "none") {
+                text.style.display = "inline";
+            } else {
+                text.style.display = "none";
+            }
+        }
     </script>
             
 </body>
