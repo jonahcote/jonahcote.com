@@ -1,2 +1,5 @@
 # jonahcote.com
-A personal website built with Bootstrap 5
+A personal website
+- Built with Bootstrap
+- Hosted by DigitalOcean
+- Served by Cloudflare
