@@ -126,27 +126,27 @@
     <!-- Get day of the week and year modified from W3Schools -->
     <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
     <script>
-                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                
-                const d = new Date();
-                let day = weekday[d.getDay()];
-                document.getElementById("weekday").innerHTML = day;
-                
-                let year = d.getYear();
-                document.getElementById("year").innerHTML = year+1900;
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday🐪","Thursday","Friday","Saturday"];
+        
+        const d = new Date();
+        let day = weekday[d.getDay()];
+        document.getElementById("weekday").innerHTML = day;
+        
+        let year = d.getYear();
+        document.getElementById("year").innerHTML = year+1900;
     </script>
             
     <!-- Toggletext -->
     <!-- Used in laptop easter egg -->
     <script>
-                function toggleText() {
-                    var text = document.getElementById("demo");
-                    if (text.style.display === "none") {
-                        text.style.display = "inline";
-                    } else {
-                        text.style.display = "none";
-                    }
-                }
+        function toggleText() {
+            var text = document.getElementById("demo");
+            if (text.style.display === "none") {
+                text.style.display = "inline";
+            } else {
+                text.style.display = "none";
+            }
+        }
     </script>
             
 </body>
