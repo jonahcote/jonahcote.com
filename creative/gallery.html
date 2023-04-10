@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Jonah Cote, UVM student software developer portfolio projects site.">
+    <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Jonah Cote">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- Title and favicon -->
+    <title>Jonah Cote</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+
+<!-- Give the body padding and make it a responsive container at small sizes-->
+<body class="p-3 bg-dark container-md">
+    
+    <!-- Navigation -->
+    <nav class="container">
+        <header class="d-flex justify-content-center py-3 mb-2">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../professional.html">Professional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../creative.html">Creative</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../contact.html">Contact</a>
+            </li>
+          </ul>
+        </header>
+        
+    </nav>
+
+    <!-- Main content -->
+    <div id="gallery">
+  
+        <img src="../media/gallery/Arcadia into Canada.jpg">
+        <img src="../media/gallery/Border store urbex gore.jpg">
+        <img src="../media/gallery/Burlington waterfront at sunset.JPEG">
+        <img src="../media/gallery/Caver highlighted Vermont.JPEG">
+        <img src="../media/gallery/Cloud table.JPEG">
+        <img src="../media/gallery/East Haven radar base ruins.JPG">
+        <img src="../media/gallery/Fiona on the edge.jpg">
+        <img src="../media/gallery/Forge of God over Lake Champlain.JPEG">
+        <img src="../media/gallery/Golden camp glow.JPG">
+        <img src="../media/gallery/Golden hour Balsams view.JPEG">
+        <img src="../media/gallery/Joshua Tree rocks.JPEG">
+        <img src="../media/gallery/King kitten.PNG">
+        <img src="../media/gallery/Lake of the Clouds.JPEG">
+        <img src="../media/gallery/Lake Wallace duck at sunset.JPEG">
+        <img src="../media/gallery/Lydia in the arch.jpg">
+        <img src="../media/gallery/Mishmash in Boston.jpg">
+        <img src="../media/gallery/One last look home.JPG">
+        <img src="../media/gallery/Serene scene NH lake.jpg">
+        <img src="../media/gallery/Smoker in front of tent.jpg">
+        <img src="../media/gallery/Table Rock Dixville Notch overlook.JPEG">
+        <img src="../media/gallery/The Green Gate.JPEG">
+        <img src="../media/gallery/The moment of uncertainty.jpg">
+        <img src="../media/gallery/Train station circle.JPEG">
+        <img src="../media/gallery/Two cavers on rock.JPEG">
+       
+    </div>
+            
+    <!-- Footer -->
+    <footer class="d-none d-md-flex justify-content-between pt-2 mt-3 fixed-bottom bg-dark container-lg">
+        
+        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
+        
+        <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
+        
+        <p class="text-muted justify-content-end">
+            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
+            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        </p>
+        
+    </footer>
+            
+    <!-- JAVASCRIPT FOLLOWS BELOW -->
+            
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            
+    <!-- Get day of the week and year modified from W3Schools -->
+    <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
+    <script>
+                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                
+                const d = new Date();
+                let day = weekday[d.getDay()];
+                document.getElementById("weekday").innerHTML = day;
+                
+                let year = d.getYear();
+                document.getElementById("year").innerHTML = year+1900;
+    </script>
+            
+    <!-- Toggletext -->
+    <!-- Used in laptop easter egg -->
+    <script>
+                function toggleText() {
+                    var text = document.getElementById("demo");
+                    if (text.style.display === "none") {
+                        text.style.display = "inline";
+                    } else {
+                        text.style.display = "none";
+                    }
+                }
+    </script>
+            
+</body>
+</html>
