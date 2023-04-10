@@ -1,6 +1,6 @@
 #gallery {
     line-height:0;
-    -webkit-column-count:5; /* split it into 5 columns */
+    -webkit-column-count:5; /* split it into 3 columns */
     -webkit-column-gap:5px; /* give it a 5px gap between columns */
     -moz-column-count:5;
     -moz-column-gap:5px;
@@ -11,10 +11,12 @@
     width: 100% !important;
     height: auto !important;
     margin-bottom:5px; /* to match column gap */
-    filter: grayscale(100%);
-    transition: filter .3s;
  }
- #gallery img:hover {
+ #darkroom img {
+    filter: invert(75%);
+    transition: filter 1s;
+ }
+ #darkroom img:hover {
     filter:none;
  }
  @media (max-width: 1200px) {
