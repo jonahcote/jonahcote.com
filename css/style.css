@@ -13,6 +13,7 @@
     height: auto !important;
     margin-bottom:5px; /* to match column gap */
  }
+ /* Toggle with JavaScript */
  .darkroom img {
     filter: invert(75%);
     transition: filter 2s;
@@ -20,6 +21,7 @@
  .darkroom img:hover {
     filter:none;
  }
+ /* Responsive number of columns at different sizes */
  @media (max-width: 1200px) {
     #gallery {
      -moz-column-count:    4;
