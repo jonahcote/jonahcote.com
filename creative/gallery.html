@@ -49,27 +49,21 @@
     </nav>
 
     <!-- Directions banner -->
+    <div class="row text-muted">
+        <h3>Welcome to the <strong>Darkroom</strong></h3>
+    </div>
     <div class="row">
-        <div class="col-8">
-            <div class="alert alert-primary border-5" role="alert">
-                <i class="bi bi-camera-fill"></i>
-                &nbsp; Hover over an image to develop the film!
-            </div>
-        </div>
         <div class="col">
-            <a class="text-decoration-none" href="./gallery_lights_on.html">
-                <div class="alert alert-warning border-5">
-                    <i class="bi bi-lightbulb"></i>
-                    <strong>Turn on the lights</strong> (develop all images)
-                </div>
-            </a>
+            <div class="alert alert-warning border-5" onclick="toggleDevelopment()">
+                <i class="bi bi-lightbulb"></i>
+                <strong>&nbsp;Enter darkroom mode</strong> (Hover over an image to develop the film!)
+            </div>
         </div>
     </div>
     
 
     <!-- Main content -->
     <div id="gallery">
-        <div id="darkroom">
             <img src="../media/gallery/Arcadia into Canada.jpg">
             <img src="../media/gallery/Border store urbex gore.jpg">
             <img src="../media/gallery/Burlington waterfront at sunset.JPEG">
@@ -94,7 +88,6 @@
             <img src="../media/gallery/The moment of uncertainty.jpg">
             <img src="../media/gallery/Train station circle.JPEG">
             <img src="../media/gallery/Two cavers on rock.JPEG">
-        </div>
     </div>
             
     <!-- Footer -->
@@ -133,14 +126,10 @@
     <!-- Toggletext -->
     <!-- Used in laptop easter egg -->
     <script>
-                function toggleText() {
-                    var text = document.getElementById("demo");
-                    if (text.style.display === "none") {
-                        text.style.display = "inline";
-                    } else {
-                        text.style.display = "none";
-                    }
-                }
+        function toggleDevelopment() {
+            var element = document.body;
+            element.classList.toggle("darkroom");
+        }
     </script>
             
 </body>
