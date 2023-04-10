@@ -15,7 +15,7 @@
  }
  .darkroom img {
     filter: invert(75%);
-    transition: filter 1s;
+    transition: filter 2s;
  }
  .darkroom img:hover {
     filter:none;
