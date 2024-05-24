@@ -7,148 +7,39 @@
     <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="authors" content="Jonah Cote">
-    
-    <!-- Bootstrap CSS and icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <!-- Title and favicon -->
     <title>Jonah Cote</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link rel="icon" type="image/x-icon" href="media/jonah cote favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css">
 
 </head>
 
 <!-- Give the body padding and make it a responsive container at small sizes-->
-<body class="p-3 bg-light container-lg">
-    
-    <!-- Navigation -->
-    <nav class="container">
-        <header class="d-flex justify-content-center py-3 mb-2">
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./professional.html">Professional</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./creative.html">Creative</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./blog.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./contact.html">Contact</a>
-            </li>
-          </ul>
-        </header>
-        
-    </nav>
-
-    <!-- WIP Banner -->
-    <div class="alert alert-warning alert-dismissible fade show border-5" role="alert">
-        <i class="bi bi-exclamation-diamond-fill"></i>
-        <strong>Grab a hard hat!</strong> This site is under construction.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<body>
+    <!-- Header -->
+    <head>
+        <h1>
+            𖤓 jonah cote 𖤓
+        </h1>
+        <p>
+            <a href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">email</a>
+        </p>
+    </head>
+    <div id="index_image">
+        <img id="bird" src="media/bird and tree.jpg">
+        <a href="https://www.pixiv.net/en/artworks/108068881" target="_blank" class="fade">ぴぃ by  飯田研人</a>
     </div>
 
-    <!-- About -->
-    <div id="top" class="rounded-2 bg-white p-3 my-4">
-        <div class="row">
-            <!-- Left column/content -->
-            <div class="col-lg-8 col-sm-12">
-                <!-- Emoji -->
-                <p class="fs-1 text-center">⛷️🗺️ <span type='button' onclick="toggleText()">💻</span> <code class="fs-6" id='demo' style='display: none; vertical-align:middle'>*BEEEP*</code> </p>
-                
-                <!-- Clarke quote -->
-                <figure class="text-center">
-                    <blockquote class="blockquote">
-                        <p>Any sufficiently advanced technology is indistinguishable from <strong><span style="color:indigo">magic.</span></strong> ✨</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Arthur C. Clarke
-                    </figcaption>
-                </figure>
-                
-                <!-- Self-typing text -->
-                <p>
-                    I always wanted to grow up a 
-                    <span
-                    class="txt-rotate"
-                    data-period="2000"
-                    data-rotate='[ "magician.", "computer programmer.", "problem solver."]'></span> 
-                </p>
-                
-                <!-- Elevator pitch content -->
-                <p>
-                    Hi! I'm Jonah. I was born and raised in Vermont, the home of real maple syrup and rugged skiing.
-                    Technology brought the world into my childhood bedroom, and I'm excited to keep bringing the world to more people.
-                </p>
-                <p>
-                    My technical interests cast a wide net at the moment, and I think some of the most intersting problems out now are in <strong>AI alignment</strong>, <strong>the future of cryptography</strong>, and <strong>penetration testing</strong>.
-                </p>
-                <p class="mb-0">
-                    In my free time, my heart is in worldbuilding. My <a class="text-decoration-none" href="https://www.notion.so/jonahcote/Second-Republic-of-Vermont-0484ad6108644bd3890ed95337af49d3" target="_blank" rel="noopener noreferrer">current pet projet</a> is an alternate history where Leif Erkison's expedition pushes deeper into North America, settling Vermont 700 years early and bringing Norse seiðr with them.
-                </p>
-            </div>
-            <!-- Joshua tree image -->
-            <div class="col-lg-4 col-sm-12 d-none d-lg-block">
-                <img src="media/humanjoshuatree.JPG" alt="A group of people mirroring the shape of a gnarled tree behind them with their arms" width="100%" class="rounded-2">
-            </div>
-        </div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="row rounded-2 mb-4">
-        <!-- Card one (green) -->
-        <div class="col-md-6 col-sm-12">
-            <div class="alert alert-success border-0" role="alert">
-                <div class="row">
-                    <!-- Picture -->
-                    <div class="col-3 my-auto">
-                        <img src="media/annihilation_cover.jpg" alt="" width="100%" class="rounded-2">
-                    </div>
-                    <!-- Text -->
-                    <div class="col-9 my-auto">
-                        <h4>Most Recent Book</h4>
-                        <p class="my-0">⭐⭐⭐⭐</p>
-                        <p class="mt-0"><em>Area X Trilogy</em>, Jeff Vandermeer</p>
-                        <p class="mb-0">This trilogy, <em>Annihilation, Authority,</em> and <em>Acceptance</em>, is some of the most unique sci-fi I've read in years. Fans of speculative ecology, spy thrillers, human psychology, eldrich horror, and linguistics can all enjoy this chaotic soup of a series.</p>
-                    </div>
-                </div>
-              </div>
-        </div>
-
-        <!-- Card two (blue) -->
-        <div class="col-md-6 col-sm-12">
-            <div class="alert alert-primary border-0" role="alert">
-                <div class="row">
-                    <!-- Picture -->
-                    <div class="col-3 my-auto">
-                        <img src="media/heptapod_b_logogram.jpeg" alt="" width="100%" class="rounded-2">
-                    </div>
-                    <!-- Text -->
-                    <div class="col-9 my-auto">
-                        <h4>Upcoming Project</h4>
-                        <p class>I recently re-watched <em>Arrival</em> by Denis Villeneuve, and I think it's about time I gave cracking its alien language, Heptapod B, another shot.</p>
-                        <p class="mb-0">Keep an eye on the blog for updates!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            
     <!-- Footer -->
-    <footer class="d-none d-md-flex justify-content-between border-top pt-2 mt-3 fixed-bottom bg-light container-lg">
+    <footer>
         
-        <p class="text-muted">©&nbsp;<span id="year"></span>&nbsp;Jonah Cote</p>
-        
-        <p class="text-muted justify-content-center">Have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!</p>
-        
-        <p class="text-muted justify-content-end">
-            <a class="p-1 text-reset" href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">Github</a>
-            <a class="p-1 text-reset" href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="p-1 text-reset" href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+        <p>
+            have a wonderful&nbsp;<strong><span id="weekday"></span></strong>!
         </p>
         
     </footer>
@@ -158,71 +49,10 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> </script>
             
-    <!-- Self typing text from W3Schools -->
-    <!-- Used in "about me" section to type out traits -->
-    <script>
-                var TxtRotate = function(el, toRotate, period) {
-                    this.toRotate = toRotate;
-                    this.el = el;
-                    this.loopNum = 0;
-                    this.period = parseInt(period, 10) || 2000;
-                    this.txt = '';
-                    this.tick();
-                    this.isDeleting = false;
-                };
-                
-                TxtRotate.prototype.tick = function() {
-                    var i = this.loopNum % this.toRotate.length;
-                    var fullTxt = this.toRotate[i];
-                    
-                    if (this.isDeleting) {
-                        this.txt = fullTxt.substring(0, this.txt.length - 1);
-                    } else {
-                        this.txt = fullTxt.substring(0, this.txt.length + 1);
-                    }
-                    
-                    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-                    
-                    var that = this;
-                    var delta = 300 - Math.random() * 100;
-                    
-                    if (this.isDeleting) { delta /= 2; }
-                    
-                    if (!this.isDeleting && this.txt === fullTxt) {
-                        delta = this.period;
-                        this.isDeleting = true;
-                    } else if (this.isDeleting && this.txt === '') {
-                        this.isDeleting = false;
-                        this.loopNum++;
-                        delta = 500;
-                    }
-                    
-                    setTimeout(function() {
-                        that.tick();
-                    }, delta);
-                };
-                
-                window.onload = function() {
-                    var elements = document.getElementsByClassName('txt-rotate');
-                    for (var i=0; i<elements.length; i++) {
-                        var toRotate = elements[i].getAttribute('data-rotate');
-                        var period = elements[i].getAttribute('data-period');
-                        if (toRotate) {
-                            new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                        }
-                    }
-                    // INJECT CSS
-                    var css = document.createElement("style");
-                    css.type = "text/css";
-                    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-                    document.body.appendChild(css);
-                };
-    </script>
-            
     <!-- Get day of the week and year modified from W3Schools -->
     <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
     <script>
-                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                const weekday = ["sunday","monday","tuesday","wednesday 🐫","thursday","friday","saturday"];
                 
                 const d = new Date();
                 let day = weekday[d.getDay()];

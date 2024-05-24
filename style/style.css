@@ -1,0 +1,26 @@
+@font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
+@font-face { font-family: CMUTypewriter; src: url('CMU\ Typewriter\ Text\ Variable\ Width.ttf');}
+* {
+    font-family:  CMUSerif;
+    background-color: #f5ecd3;
+}
+h1 {
+    font-family: CMUTypewriter;
+    color: #880015;
+}
+img {
+    max-width: 100%
+}
+#bird {
+    width: 500px;
+}
+#index_image {
+    max-width: 100%;
+    width: 500px;
+    text-align: right;
+}
+.fade {
+    color: #880015; /* Fallback for older browsers */
+    color: rgba(88, 0, 15, 0.5);
+    opacity: 50%;
+}
