@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="homepage">
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,11 +18,17 @@
 </head>
 
 <!-- Give the body padding and make it a responsive container at small sizes-->
-<body>
+<body class="daylight">
     <!-- Header -->
     <header class="flexrow separateitem">
         <div class="col" id="nametag">
-            <h1>jonah cote <a href="index.html">𖤓</a></h1>
+            <h1>jonah <a href="./colophon.html" class="nodecoration"><span class="secretlink">c</span></a>ote <a href="index.html" class="nodecoration">𖤓</a></h1>
+        </div>
+        <div class="col" id="toplinks">
+            <div><a href="./about.html">/about</a></div>
+        </div>
+        <div class="col" id="toplinks">
+            <div><a href="./contact.html">/contact</a></div>
         </div>
         <div class="col" id="toplinks">
             <div><a href="https://are.na/jonah-cote" target="_blank" rel="noopener noreferrer">are.na</a></div>
@@ -30,12 +36,7 @@
         <div class="col" id="toplinks">
             <div><a href="https://www.bookshelf.town/user/jonahcote" target="_blank" rel="noopener noreferrer">bookshelf</a></div>
         </div>
-        <div class="col" id="toplinks">
-            <div><a href="mailto:rfimcws48@mozmail.com" target="_blank" rel="noopener noreferrer">contact</a></div>
-        </div>
-        <div class="col" id="toplinks">
-            <div><a href="./now.html">/now</a></div>
-        </div>
+
         <!-- <div class="col" id="toplinks">
             <div><a href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">github</a></div>
             <div><a href="https://www.linkedin.com/in/jonah-cote/" target="_blank" rel="noopener noreferrer">linkedin</a></div>
@@ -44,21 +45,50 @@
     </header>
 
     <main>
-        <a href="https://en.wikipedia.org/wiki/Cueva_de_las_Manos" target="_blank"><img id="hands" class="separateitem" src="media/hands-of-the-past.webp" alt="Prehistoric outlines of dozens of hands in orange, brown, and black on a cave wall"></a>
+        <img id="hands" class="separateitem" src="media/hands-of-the-past.webp" alt="Prehistoric outlines of dozens of hands in orange, brown, and black on a cave wall">
     
-        <h2 class="bloglink separateitem">The Pemi Loop of the White Mountains: Part 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="bloglink separateitem flexrow">
+            <div class="col">
+                <img src="./media/JonahOnRockPile.jpg">
+            </div>
+            <div class="col">
+                <a href="post/mount-washington-1.html">
+                    <h2>The Pemi Loop of the White Mountains: Part 1</h2>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
 
-        <h2 class="bloglink separateitem">The Pemi Loop of the White Mountains: Part 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         <div class="bloglink separateitem flexrow">
+            <div class="col">
+                <img src="./media/gallery/East Haven radar base ruins.JPG">
+            </div>
+            <div class="col">
+                <a href="post/mount-washington-1.html">
+                    <h2>The Pemi Loop of the White Mountains: Part 1</h2>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+         <div class="bloglink separateitem flexrow">
+            <div class="col">
+                <img src="./media/JonahOnRockPile.jpg">
+            </div>
+            <div class="col">
+                <a href="post/mount-washington-1.html">
+                    <h2>The Pemi Loop of the White Mountains: Part 1</h2>
+                </a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="flexrow flexjustified">
+    <footer class="flexrow flexjustified separateitem">
         
         <div>have <span id="phrase"></span>&nbsp;<span id="weekday"></span>!</div>
-        <div><a href="./colophon">colophon</a></div>
         <div>copyright jonah cote <span id="year"></span></div>
         
     </footer>
