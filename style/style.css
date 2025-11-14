@@ -1,18 +1,16 @@
-
+/* Font Faces */
 @font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
 @font-face {font-family: CMUConcrete; src: url('cmunorm.ttf')}
+/* Eliminate "default" margin and padding.  *I* control the padding. */
 * {
     margin: 0;
     padding: 0;
 }
-html{
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    margin-left: 24px;
-    margin-right: 24px;
-    /* justify-content: center; */
-}
+/* Set the defaults for the view window:
+    We're using flexbox.  Take up the entire screen.
+    Set the max width at a reasonable 800px.
+    Give the left and right sides of the screen some padding.
+*/
 body {
     font-family:  CMUSerif;
     display: flex;
@@ -20,24 +18,20 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 header {
-    /* padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px; */
-    /* border-top: dotted;
-    border-bottom: dotted; */
-    border-width: 2px;
-    border-color:#880015;
+    /* Nothing for now. Eventually add logic to change the way it flows on mobile.*/
 }
 main {
-    flex-grow: 1;
+    flex-grow: 1; /*Take up as much space as you're allowed*/
 }
 footer{
-    padding-bottom: 10px;
+    padding-bottom: 10px; /* Give some breathing room at the bottom */
 }
 img {
-    max-width: 100%
+    max-width: 100% /*Automatically shrink to fit the screen at smaller sizes*/
 }
 h2 {
     font-size: large;
@@ -45,6 +39,7 @@ h2 {
 p {
     margin-top: 0.5em;
 }
+
 /* Control link color */
 a:link, a:visited {
   color: #880015;
@@ -59,7 +54,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* Themes for pages */
+/* Color themes for pages */
 .coldsky {
     background-color: #dcfcfc;
 }
@@ -81,31 +76,28 @@ a:hover {
     background-color:whitesmoke;
 }
 
-/* Set max width of the hand art image on the homepage*/
-#hands {
-    max-width: 100%;
-}
-#biking {
-    max-width: 100%;
-}
 /* Header formatting, using flexbox */
+/* Flexrow is used for parent divs */
 .flexrow {
     display: flex;
     flex-flow: row;
 }
+/* Add this to run the elements right up to the edges, and equalize spacing from there */
 .flexjustified {
     justify-content: space-between;
 }
+/* Necessary code to center items vertically within a column */
 .col {
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
+/* Unordered list of links on the contact page.*/
 #contactlist {
     list-style-type: none;
     list-style-position: inside;
     font-size: large;
 }
+/* Unordered list of links in the Curio shop. HTML has a built-in option to for greek letters!*/
 #curiolist {
     list-style-type: lower-greek;
     list-style-position: inside;
@@ -115,16 +107,21 @@ a:hover {
         margin-top:8px;
     }
 }
+/* Center the text on the contact landing page */
+#opentext {
+    text-align: center;
+}
+/* The Jonah Cote wordmark on top of the site */
 #nametag {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
-    /* width: 50%; */
     color: #1d1815;
 
 }
-#toplinks {
+/* The links at the top of the site*/
+.toplink {
     display: flex;
     /* width: 25%; */
     text-align: left;
@@ -133,12 +130,8 @@ a:hover {
     font-family: CMUConcrete;
 }
 
-.bloglink {
-
-    /* border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABoUlEQVRYR+2Z25KDIAyGy+5tXd//MV32dm0DloKBkHRGA87gHVbLx58DJJobuqZpfuB7mmNrF1OaL7t5OVBqZWepmwvkDGtugYNUVBv0Di4XYVaA/PKaZKCUybWAw/xhvgBeAf2HdXy/LdwKFIOb6Q5RDpoHoO2BB4x/vSX8GKxgl3I0HuWzGCwHfaWjPSgGj+OjwKi0SHEYbiX49wHKWJZV9CwFZaaPsdI5qCCPaqWloCwXK+/NYAYfcftBuLoFpVbW1kcLpg9AQdkWirrdfXkd87KEj5XECmoBi320+aFkhq16XWHrtnHrTk9P3Er63pmSQ0jfoInkAxRFbdkFo89eZwvlgqm7hI/Tk1b+3OfxSnqiEn4bULqy6KZc5lxwgH4ahEPRTxXjni8qCh0G+7f1E4aPcgrKqtDKCV/rEMKD/oDhBW1HkSKudkgrQtFL9YfIlg61sv39ral63BX7n1TpQ9ZMnCmOg5T903VAfQ1VCSZ8mnEtarHhSz7ruq3gNXLHSWZLSiLyfe7rCIY/Ia68ZuTHBpkH6T8lt4g+227GJ6BNEEl+Ig5YAAAAAElFTkSuQmCC") 14 /  14px / 0 round;
-    border-width:  14px;
-    border-style:  solid; */
-
+/* Boxes that link to journal items.  Each has a preview image, header, and short description. */
+.journallink {
     img {
         max-width: 200px;
         padding-right: 20px;
@@ -152,24 +145,23 @@ a:hover {
         font-size: medium;
     }
 }
-
-.concrete {
-    font-family: CMUConcrete;
-}
-
-#opentext {
-    text-align: center;
-}
+/* Each page has a title element that's styled uniquely */
 .pagetitle {
     font-size: x-large;
     font-family: CMUConcrete;
     opacity: 75%;
 }
+/* Set select text to the Concrete font */
+.concrete {
+    font-family: CMUConcrete;
+}
 
-.separateitem {
+/* For when you need a little breathing room */
+.breathe {
     margin-top: 24px;
 }
 
+/* For subtler items */
 .fade {
     color: #880015; /* Fallback for older browsers */
     color: rgba(88, 0, 15, 0.5);
