@@ -75,6 +75,9 @@ a:hover {
 .overcast {
     background-color: #d3d3d3;
 }
+.snowfall {
+    background-color:whitesmoke;
+}
 
 /* Set max width of the hand art image on the homepage*/
 #hands {
@@ -94,6 +97,11 @@ a:hover {
 .col {
     display: flex;
     flex-direction: column;
+}
+#contactlist {
+    list-style-type: lower-greek;
+    list-style-position: inside;
+    font-size: large;
 }
 #nametag {
     display: flex;
@@ -137,6 +145,9 @@ a:hover {
     font-family: CMUConcrete;
 }
 
+#opentext {
+    text-align: center;
+}
 .pagetitle {
     font-size: x-large;
     font-family: CMUConcrete;
