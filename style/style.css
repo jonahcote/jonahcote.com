@@ -24,9 +24,9 @@ header {
     padding-left: 10px;
     padding-right: 10px; */
     margin-top: 5px;
-    margin-bottom: 5px;
-    /* border-top: dotted; */
-    border-bottom: dotted;
+    margin-bottom: 10px;
+    /* border-top: dotted;
+    border-bottom: dotted; */
     border-width: 2px;
     border-color:#880015;
 }
@@ -35,9 +35,6 @@ main {
 }
 footer{
     padding-bottom: 10px;
-}
-h1 {
-    text-emphasis-color: #1d1815;
 }
 img {
     max-width: 100%
@@ -59,6 +56,8 @@ a:hover {
 .flexrow {
     display: flex;
     flex-flow: row;
+}
+.flexjustified {
     justify-content: space-between;
 }
 .col {
@@ -70,19 +69,16 @@ a:hover {
     /* align-items: center; */
     justify-content: center;
     text-align: left;
-    width: 50%;
-}
-#leftlinks {
-    display: flex;
-    width: 25%;
-    text-align: right;
-}
-#rightlinks {
-    display: flex;
-    width: 25%;
-    text-align: right;
-}
+    /* width: 50%; */
+    color: #1d1815;
 
+}
+#toplinks {
+    display: flex;
+    /* width: 25%; */
+    text-align: left;
+    padding-left: 16px;
+}
 
 .fade {
     color: #880015; /* Fallback for older browsers */
