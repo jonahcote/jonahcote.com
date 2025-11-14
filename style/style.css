@@ -117,6 +117,9 @@ a:hover {
         margin-top:8px;
     }
 }
+#geometricripple {
+    max-width: 300px;
+}
 /* Center the text on the contact landing page */
 #opentext {
     text-align: center;
@@ -188,7 +191,7 @@ a:hover {
 }
 
 
-/* Tighen padding at smaller sizes */
+/* Tighen padding and hide some non-essential content at smaller sizes */
 @media (max-width: 768px) {
     body {
         margin-left: 0px;
