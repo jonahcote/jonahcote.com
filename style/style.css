@@ -1,24 +1,89 @@
 @font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
 @font-face { font-family: CMUTypewriter; src: url('CMU\ Typewriter\ Text\ Variable\ Width.ttf');}
+
 * {
     font-family:  CMUSerif;
     background-color: #f5ecd3;
+    margin: 0;
+    padding: 0;
+}
+html{
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+body {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    height: 100%;
+}
+header {
+    /* padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* border-top: dotted; */
+    border-bottom: dotted;
+    border-width: 2px;
+    border-color:#880015;
+}
+main {
+    flex-grow: 1;
+}
+footer{
+    padding-bottom: 10px;
 }
 h1 {
-    font-family: CMUTypewriter;
-    color: #880015;
+    text-emphasis-color: #1d1815;
 }
 img {
     max-width: 100%
 }
-#bird {
-    width: 500px;
+/* Control link color */
+a:link, a:visited {
+  color: #880015;
+  text-decoration: none;
 }
-#index_image {
-    max-width: 100%;
-    width: 500px;
+a:hover {
+  color: blue;
+}
+
+/* Set max width of the hand art image on the homepage*/
+#hands {
+    max-width: 500px;
+}
+/* Header formatting, using flexbox */
+.flexrow {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+#nametag {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+}
+#leftlinks {
+    display: flex;
+    width: 25%;
     text-align: right;
 }
+#rightlinks {
+    display: flex;
+    width: 25%;
+    text-align: right;
+}
+
+
 .fade {
     color: #880015; /* Fallback for older browsers */
     color: rgba(88, 0, 15, 0.5);
