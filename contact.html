@@ -68,33 +68,20 @@
     <!-- Footer -->
     <footer class="flexrow flexjustified separateitem">
         
-        <div>have <span id="phrase"></span>&nbsp;<span id="weekday"></span>!</div>
+        <div>&nbsp;</div>
         <div>copyright jonah cote <span id="year"></span></div>
         
     </footer>
 
-    <!-- JAVASCRIPT FOLLOWS BELOW -->
-            
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> </script>
-            
-    <!-- Get day of the week and year modified from W3Schools -->
+    <!-- Javascript -->
+
+    <!-- Get year -->
     <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
-    <script>
-                const weekday = ["sunday","monday","tuesday","wednesday <a href='https://www.youtube.com/watch?v=G2s0RPrdB_8' target='blank'>🐪</a>","thursday","friday","saturday"];
-                
+    <script>                
                 const d = new Date();
-                let day = weekday[d.getDay()];
-                document.getElementById("weekday").innerHTML = day;
-                
                 let year = d.getYear();
                 document.getElementById("year").innerHTML = year+1900;
-
-                const daily_adjectives = ["an oceanic", "a dark and stormy", "a quixotic", "a beautiful"]
-                const random_index = Math.floor(Math.random() * daily_adjectives.length);
-                let lucky_phrase = daily_adjectives[random_index];
-                document.getElementById("phrase").innerHTML = lucky_phrase;
     </script>
-            
+
 </body>
 </html>
