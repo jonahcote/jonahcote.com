@@ -1,3 +1,4 @@
+
 @font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
 @font-face {font-family: CMUConcrete; src: url('cmunorm.ttf')}
 * {
@@ -102,6 +103,15 @@ a:hover {
     list-style-type: lower-greek;
     list-style-position: inside;
     font-size: large;
+}
+#curiolist {
+    list-style-type: none;
+    list-style-position: inside;
+    font-size:large;
+    margin-top: 10px;
+    li {
+        margin-top:8px;
+    }
 }
 #nametag {
     display: flex;
