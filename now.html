@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="homepage">
+<html lang="en" id="nowpage">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -44,11 +44,8 @@
     </header>
 
     <main>
-        <a href="https://en.wikipedia.org/wiki/Cueva_de_las_Manos" target="_blank"><img id="hands" class="separateitem" src="media/hands-of-the-past.webp" alt="Prehistoric outlines of dozens of hands in orange, brown, and black on a cave wall"></a>
+        <img id="hands" class="separateitem" src="media/JonahOnRockPile.jpg" alt="">
     
-        <h2 class="bloglink separateitem">The Pemi Loop of the White Mountains: Part 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
         <h2 class="bloglink separateitem">The Pemi Loop of the White Mountains: Part 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -57,7 +54,7 @@
     <!-- Footer -->
     <footer class="flexrow flexjustified">
         
-        <div>have <span id="phrase"></span>&nbsp;<span id="weekday"></span>!</div>
+        <div>this is <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">a now page</a></div>
         <div><a href="./colophon">colophon</a></div>
         <div>copyright jonah cote <span id="year"></span></div>
         
@@ -70,20 +67,11 @@
             
     <!-- Get day of the week and year modified from W3Schools -->
     <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
-    <script>
-                const weekday = ["sunday","monday","tuesday","wednesday <a href='https://www.youtube.com/watch?v=G2s0RPrdB_8' target='blank'>🐪</a>","thursday","friday","saturday"];
-                
+    <script>                
                 const d = new Date();
-                let day = weekday[d.getDay()];
-                document.getElementById("weekday").innerHTML = day;
                 
                 let year = d.getYear();
                 document.getElementById("year").innerHTML = year+1900;
-
-                const daily_adjectives = ["an oceanic", "a dark and stormy", "a quixotic", "a beautiful"]
-                const random_index = Math.floor(Math.random() * daily_adjectives.length);
-                let lucky_phrase = daily_adjectives[random_index];
-                document.getElementById("phrase").innerHTML = lucky_phrase;
     </script>
             
 </body>
