@@ -11,6 +11,10 @@
     Set the max width at a reasonable 800px.
     Give the left and right sides of the screen some padding.
 */
+/* html {
+    display:flex;
+    justify-content: center;
+} */
 body {
     font-family:  CMUSerif;
     display: flex;
@@ -21,8 +25,11 @@ body {
     margin-left: 24px;
     margin-right: 24px;
 }
+
 header {
     /* Nothing for now. Eventually add logic to change the way it flows on mobile.*/
+    border: black;
+    flex-direction: column;
 }
 main {
     flex-grow: 1; /*Take up as much space as you're allowed*/
@@ -48,7 +55,7 @@ a:hover {
   color: blue;
 }
 .secretlink {
-    color: black;
+    color: #1d1815;
 }
 .nodecoration {
     text-decoration: none;
@@ -80,16 +87,19 @@ a:hover {
 /* Flexrow is used for parent divs */
 .flexrow {
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 /* Add this to run the elements right up to the edges, and equalize spacing from there */
 .flexjustified {
     justify-content: space-between;
 }
+.flexend {
+    justify-content: flex-end;
+}
 /* Necessary code to center items vertically within a column */
 .col {
     flex-direction: column;
-    flex-wrap: wrap;
 }
 /* Unordered list of links on the contact page.*/
 #contactlist {
@@ -114,16 +124,20 @@ a:hover {
 /* The Jonah Cote wordmark on top of the site */
 #nametag {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     text-align: left;
     color: #1d1815;
+    flex-grow: 1;
 
+}
+#toplinks {
+    display: flex;
+    flex-direction: row;
 }
 /* The links at the top of the site*/
 .toplink {
     display: flex;
-    /* width: 25%; */
     text-align: left;
     padding-left: 14px;
     justify-content: center;
@@ -132,6 +146,11 @@ a:hover {
 
 /* Boxes that link to journal items.  Each has a preview image, header, and short description. */
 .journallink {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
     img {
         max-width: 200px;
         padding-right: 20px;
@@ -166,4 +185,31 @@ a:hover {
     color: #880015; /* Fallback for older browsers */
     color: rgba(88, 0, 15, 0.5);
     opacity: 75%;
+}
+
+
+/* Tighen padding at smaller sizes */
+@media (max-width: 768px) {
+    body {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    header {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    footer {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .journallink {
+        img {
+            display: none;
+        }
+    }
+
 }
