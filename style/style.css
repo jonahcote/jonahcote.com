@@ -1,6 +1,6 @@
 @font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
+@font-face {font-family: CMUConcrete; src: url('cmunorm.ttf')}
 * {
-    font-family:  CMUSerif;
     margin: 0;
     padding: 0;
 }
@@ -12,6 +12,7 @@ html{
     /* justify-content: center; */
 }
 body {
+    font-family:  CMUSerif;
     display: flex;
     max-width: 800px;
     flex-direction: column;
@@ -36,6 +37,12 @@ footer{
 img {
     max-width: 100%
 }
+h2 {
+    font-size: large;
+}
+p {
+    margin-top: 0.5em;
+}
 /* Control link color */
 a:link, a:visited {
   color: #880015;
@@ -50,11 +57,16 @@ a:hover {
     text-decoration: none;
 }
 
+/* Themes for pages */
 .coldsky {
     background-color: #dcfcfc;
 }
 .daylight {
     background-color: #f5ecd3;
+}
+.eggplant {
+    background-color:rgb(226, 186, 225);
+    color:rgb(65, 17, 65);
 }
 .forest {
     background-color: #becab5;
@@ -98,13 +110,15 @@ a:hover {
     text-align: left;
     padding-left: 14px;
     justify-content: center;
+    font-family: CMUConcrete;
 }
 
 .bloglink {
-    font-size: large;
-    /* border: dotted;
-    border-width: 2px; */
-    /* padding: 10px; */
+
+    /* border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABoUlEQVRYR+2Z25KDIAyGy+5tXd//MV32dm0DloKBkHRGA87gHVbLx58DJJobuqZpfuB7mmNrF1OaL7t5OVBqZWepmwvkDGtugYNUVBv0Di4XYVaA/PKaZKCUybWAw/xhvgBeAf2HdXy/LdwKFIOb6Q5RDpoHoO2BB4x/vSX8GKxgl3I0HuWzGCwHfaWjPSgGj+OjwKi0SHEYbiX49wHKWJZV9CwFZaaPsdI5qCCPaqWloCwXK+/NYAYfcftBuLoFpVbW1kcLpg9AQdkWirrdfXkd87KEj5XECmoBi320+aFkhq16XWHrtnHrTk9P3Er63pmSQ0jfoInkAxRFbdkFo89eZwvlgqm7hI/Tk1b+3OfxSnqiEn4bULqy6KZc5lxwgH4ahEPRTxXjni8qCh0G+7f1E4aPcgrKqtDKCV/rEMKD/oDhBW1HkSKudkgrQtFL9YfIlg61sv39ral63BX7n1TpQ9ZMnCmOg5T903VAfQ1VCSZ8mnEtarHhSz7ruq3gNXLHSWZLSiLyfe7rCIY/Ia68ZuTHBpkH6T8lt4g+227GJ6BNEEl+Ig5YAAAAAElFTkSuQmCC") 14 /  14px / 0 round;
+    border-width:  14px;
+    border-style:  solid; */
+
     img {
         max-width: 200px;
         padding-right: 20px;
@@ -117,6 +131,16 @@ a:hover {
     p {
         font-size: medium;
     }
+}
+
+.concrete {
+    font-family: CMUConcrete;
+}
+
+.pagetitle {
+    font-size: x-large;
+    font-family: CMUConcrete;
+    opacity: 75%;
 }
 
 .separateitem {
