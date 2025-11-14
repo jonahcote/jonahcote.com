@@ -171,5 +171,5 @@ a:hover {
 .fade {
     color: #880015; /* Fallback for older browsers */
     color: rgba(88, 0, 15, 0.5);
-    opacity: 50%;
+    opacity: 75%;
 }
