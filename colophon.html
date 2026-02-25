@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Jonah Cote, UVM student software developer portfolio projects site.">
+    <meta name="keywords" content="jonah, cote, resume, portfolio, uvm, software, developer, programmer, university of vermont, vermont, canaan, burlington, minnesota">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="authors" content="Jonah Cote">
+
+    <!-- Title and favicon -->
+    <title>Jonah Cote</title>
+    <link rel="icon" type="image/x-icon" href="media/jonah cote favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<!-- Give the body padding and make it a responsive container at small sizes-->
+<body class="coldsky">
+    <!-- Header -->
+    <header class="flexrow breathe">
+        <div class="col" id="nametag">
+            <h1>jonah <a href="./colophon.html" class="nodecoration"><span class="secretlink">c</span></a>ote <a href="index.html" class="nodecoration">𖤓</a></h1>
+        </div>
+        <div class="col toplink">
+            <div><a href="./about.html">/about</a></div>
+        </div>
+        <div class="col toplink">
+            <div><a href="./contact-landing.html">/contact</a></div>
+            
+        </div>
+        <div class="col toplink">
+            <div><a href="./curio-shop.html" rel="noopener noreferrer">/curio-shop</a></div>
+        </div>
+        <div class="col toplink">
+            <div><a href="https://are.na/jonah-cote" target="_blank" rel="noopener noreferrer">are.na</a></div>
+        </div>
+        <div class="col toplink">
+            <div><a href="https://www.bookshelf.town/user/jonahcote" target="_blank" rel="noopener noreferrer">bookshelf</a></div>
+        </div>
+        <div class="col toplink">
+            <div><a href="https://github.com/jonahcote" target="_blank" rel="noopener noreferrer">code</a></div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="breathe pagetitle">/colophon</h1>
+        <p class="breathe">This site is set in <strong>CMU Serif Roman</strong>, from Donald Knuth's Computer Modern type family.  Certain headers are set in <strong class="concrete">CMU Concrete</strong> from the same collection.</p>
+        <p>All the elements of the site were coded by hand.  Eventually, I'd like to make a simple static site generator to allow me to write journal entries in markdown.</p>
+        <p>The code for the site was written in Code OSS and Neovim.  Here's my neofetch:</p>
+        <pre>
+        <code>
+                   -`                    jonah@solomon 
+                  .o+`                   ------------- 
+                 `ooo/                   OS: Arch Linux x86_64 
+                `+oooo:                  Host: Blade 15 Base Model (Late 2020) 1.04 
+               `+oooooo:                 Kernel: 6.17.7-arch1-1 
+               -+oooooo+:                Uptime: 16 hours, 19 mins 
+             `/:-:++oooo+:               Packages: 1089 (pacman), 12 (flatpak) 
+            `/++++/+++++++:              Shell: bash 5.3.3 
+           `/++++++++++++++:             Resolution: 1920x1080 
+          `/+++ooooooooooooo/`           DE: Hyprland 
+         ./ooosssso++osssssso+`          Theme: Adwaita [GTK3] 
+        .oossssso-````/ossssss+`         Icons: Adwaita [GTK3] 
+       -osssssso.      :ssssssso.        Terminal: kitty 
+      :osssssss/        osssso+++.       CPU: Intel i7-10750H (12) @ 5.000GHz 
+     /ossssssss/        +ssssooo/-       GPU: Intel CometLake-H GT2 [UHD Graphics] 
+   `/ossssso+/:-        -:/+osssso+-     GPU: NVIDIA GeForce GTX 1660 Ti Mobile 
+  `+sso+:-`                 `.-/+oso:    Memory: 5509MiB / 15850MiB 
+ `++:.                           `-/+/
+ .`                                 `/                           
+                                                                 
+        </code>
+        </pre>
+        <p>The photo on the front page is of <a href="https://en.wikipedia.org/wiki/Cueva_de_las_Manos" target="_blank" rel="noopener noreferrer">Cueva de las Monos</a>.  The art was started nearly 10,000 years ago!  The image itself was anonymously released to the public domain.</p>
+        <p>The <a href="./contact-landing.html">contact</a> photos were shot by my friend Murphy with Lomochrome Purple 400 film on a Nikon F3. Thanks dude!</p>
+        <p>The ASCII bonsai on the about page was generated using <code>cbonsai</code> by <a href="https://johnallbritten.com/" target="_blank" ref="noopener noreferrer">John Allbritten</a>.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flexrow flexjustified">
+        
+        <div>&nbsp</div>
+        <div>copyright jonah cote <span id="year"></span></div>
+        
+    </footer>
+
+    <!-- Javascript -->
+
+    <!-- Get year -->
+    <!-- Used in footer for copyright year and "Have a wonderful [day of week]" -->
+    <script>                
+                const d = new Date();
+                
+                let year = d.getYear();
+                document.getElementById("year").innerHTML = year+1900;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* Font Faces */
+@font-face { font-family: CMUSerif; src: url('CMU\ Serif\ Roman.ttf'); } 
+@font-face {font-family: CMUConcrete; src: url('cmunorm.ttf')}
+/* Eliminate "default" margin and padding.  *I* control the padding. */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Set the defaults for the view window:
+    We're using flexbox.  Take up the entire screen.
+    Set the max width at a reasonable 800px.
+    Give the left and right sides of the screen some padding.
+*/
+/* html {
+    display:flex;
+    justify-content: center;
+} */
+body {
+    font-family:  CMUSerif;
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+header {
+    /* Nothing for now. Eventually add logic to change the way it flows on mobile.*/
+    border: black;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1; /*Take up as much space as you're allowed*/
+}
+footer{
+    padding-bottom: 10px; /* Give some breathing room at the bottom */
+}
+img {
+    max-width: 100% /*Automatically shrink to fit the screen at smaller sizes*/
+}
+h2 {
+    font-size: large;
+}
+p {
+    margin-top: 0.5em;
+}
+
+/* Control link color */
+a:link, a:visited {
+  color: #880015;
+}
+a:hover {
+  color: blue;
+}
+.secretlink {
+    color: #1d1815;
+}
+.nodecoration {
+    text-decoration: none;
+}
+
+/* Color themes for pages */
+.coldsky {
+    background-color: #dcfcfc;
+}
+.daylight {
+    background-color: #f5ecd3;
+}
+.eggplant {
+    background-color:rgb(226, 186, 225);
+    color:rgb(65, 17, 65);
+}
+.forest {
+    background-color: #becab5;
+    color: #0c2e0b;
+}
+.overcast {
+    background-color: #d3d3d3;
+}
+.snowfall {
+    background-color:whitesmoke;
+}
+
+/* Header formatting, using flexbox */
+/* Flexrow is used for parent divs */
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* Add this to run the elements right up to the edges, and equalize spacing from there */
+.flexjustified {
+    justify-content: space-between;
+}
+.flexend {
+    justify-content: flex-end;
+}
+/* Necessary code to center items vertically within a column */
+.col {
+    flex-direction: column;
+}
+/* Unordered list of links on the contact page.*/
+#contactlist {
+    list-style-type: none;
+    list-style-position: inside;
+    font-size: large;
+}
+/* Unordered list of links in the Curio shop. HTML has a built-in option to for greek letters!*/
+#curiolist {
+    list-style-type: lower-greek;
+    list-style-position: inside;
+    font-size:large;
+    margin-top: 10px;
+    li {
+        margin-top:8px;
+    }
+}
+#geometricripple {
+    max-width: 300px;
+}
+/* Center the text on the contact landing page */
+#opentext {
+    text-align: center;
+}
+/* The Jonah Cote wordmark on top of the site */
+#nametag {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    color: #1d1815;
+    flex-grow: 1;
+
+}
+#toplinks {
+    display: flex;
+    flex-direction: row;
+}
+/* The links at the top of the site*/
+.toplink {
+    display: flex;
+    text-align: left;
+    padding-left: 14px;
+    justify-content: center;
+    font-family: CMUConcrete;
+}
+
+/* Boxes that link to journal items.  Each has a preview image, header, and short description. */
+.journallink {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    img {
+        max-width: 200px;
+        padding-right: 20px;
+    }
+    h2 {
+        flex-grow: 1;
+        text-align: left;
+        font-size: large;
+    }
+    p {
+        font-size: medium;
+    }
+}
+/* Each page has a title element that's styled uniquely */
+.pagetitle {
+    font-size: x-large;
+    font-family: CMUConcrete;
+    opacity: 75%;
+}
+/* Set select text to the Concrete font */
+.concrete {
+    font-family: CMUConcrete;
+}
+
+/* For when you need a little breathing room */
+.breathe {
+    margin-top: 24px;
+}
+
+/* For subtler items */
+.fade {
+    color: #880015; /* Fallback for older browsers */
+    color: rgba(88, 0, 15, 0.5);
+    opacity: 75%;
+}
+
+
+/* Tighen padding and hide some non-essential content at smaller sizes */
+@media (max-width: 768px) {
+    body {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    header {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    footer {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .journallink {
+        img {
+            display: none;
+        }
+    }
+
+}
