@@ -132,7 +132,6 @@ a:hover {
     text-align: left;
     color: #1d1815;
     flex-grow: 1;
-
 }
 #toplinks {
     display: flex;
@@ -185,11 +184,13 @@ a:hover {
 
 /* For subtler items */
 .fade {
-    color: #880015; /* Fallback for older browsers */
-    color: rgba(88, 0, 15, 0.5);
-    opacity: 75%;
+    opacity: 80%;
 }
 
+.imgcaption {
+    opacity: 80%;
+    text-align: center;
+}
 
 /* Tighen padding and hide some non-essential content at smaller sizes */
 @media (max-width: 768px) {
