@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYC → Seton Hall Law Commute Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  #map { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+  .header {
+    position: absolute; top: 12px; left: 12px; z-index: 1000;
+    background: white; padding: 12px 16px; border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15); max-width: 340px;
+  }
+  .header h1 { margin: 0 0 4px 0; font-size: 15px; font-weight: 600; }
+  .header p { margin: 0; font-size: 11px; color: #555; line-height: 1.45; }
+  .legend {
+    position: absolute; bottom: 24px; left: 12px; z-index: 1000;
+    background: white; padding: 10px 14px; border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15); font-size: 12px;
+  }
+  .legend h3 { margin: 0 0 8px 0; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #444; }
+  .legend-row { display: flex; align-items: center; margin: 4px 0; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 50%; margin-right: 8px; border: 1px solid #222; }
+  .popup-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .popup-lines { font-size: 11px; color: #666; margin-bottom: 4px; }
+  .popup-time { font-size: 22px; font-weight: 700; margin: 6px 0 8px 0; }
+  .popup-route { font-size: 11px; color: #666; line-height: 1.5; padding: 3px 0; }
+  .popup-route.fastest { color: #111; font-weight: 500; background: #f7f7f0; padding: 4px 6px; border-radius: 4px; border-left: 3px solid #1a9850; }
+  .popup-note { font-size: 10px; color: #999; margin-top: 6px; font-style: italic; }
+  .shl-label {
+    background: #8B0000; color: white; border-radius: 4px;
+    padding: 3px 7px; font-size: 11px; font-weight: 700;
+    border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    white-space: nowrap;
+  }
+  .method-box {
+    background: white; padding: 10px 12px; border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-size: 11px;
+    max-width: 300px; line-height: 1.5;
+  }
+  .method-box b { color: #222; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<div class="header">
+  <h1>NYC → Seton Hall Law commute</h1>
+  <p>Estimated door-to-door transit time from each NYC subway station to Seton Hall Law School (One Newark Center, Newark NJ). Click any station to see the route breakdown.</p>
+</div>
+
+<div class="legend">
+  <h3>Total commute</h3>
+  <div class="legend-row"><div class="legend-dot" style="background:#1a9850"></div>&lt; 40 min</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#66bd63"></div>40–50 min</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#d9ef8b"></div>50–55 min</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#fee08b"></div>55–60 min</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#fc8d59"></div>60–70 min</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#d73027"></div>&gt; 70 min</div>
+</div>
+
+<script>
+/* =========================================================================
+   COMMUTE MODEL
+   For each NYC subway station we compute the faster of two gateway routes:
+
+   (A) Via NY Penn Station:
+       subway → 34 St-Penn → NJ Transit Northeast Corridor / Midtown Direct
+       → Newark Penn → walk to Seton Hall Law
+       Overhead: walk to NJT concourse (3) + avg peak wait (8)
+                 + NJT ride (20) + walk to SHL (5) = +36 min
+
+   (B) Via WTC PATH:
+       subway → WTC / Fulton → PATH Newark-WTC line
+       → Newark Penn → walk to Seton Hall Law
+       Overhead: walk to PATH (2) + avg wait (5)
+                 + PATH ride (22) + walk to SHL (5) = +34 min
+
+   Seton Hall Law is ~2 blocks NW of Newark Penn Station (5 min walk).
+   NJ Transit NEC peak headways: ~10-20 min. PATH Newark-WTC: ~4-10 min.
+   ========================================================================= */
+
+const PENN_OVERHEAD = 36;
+const WTC_OVERHEAD = 34;
+
+// Station data. toPenn = subway min to 34 St-Penn Station (incl. transfers).
+// toWTC = subway min to WTC/Fulton/Chambers area (incl. transfers).
+const stations = [
+  // ---- Midtown Manhattan ----
+  {name:"34 St-Penn Station (1/2/3)", lat:40.7506, lng:-73.9936, toPenn:0,  toWTC:15, lines:"1/2/3"},
+  {name:"34 St-Penn Station (A/C/E)", lat:40.7522, lng:-73.9930, toPenn:0,  toWTC:13, lines:"A/C/E"},
+  {name:"34 St-Herald Square",        lat:40.7496, lng:-73.9878, toPenn:2,  toWTC:13, lines:"B/D/F/M/N/Q/R/W"},
+  {name:"Times Sq-42 St",             lat:40.7558, lng:-73.9870, toPenn:3,  toWTC:16, lines:"1/2/3/7/N/Q/R/W/S"},
+  {name:"42 St-Bryant Park",          lat:40.7543, lng:-73.9842, toPenn:4,  toWTC:15, lines:"B/D/F/M/7"},
+  {name:"Grand Central-42 St",        lat:40.7527, lng:-73.9772, toPenn:5,  toWTC:16, lines:"4/5/6/7/S"},
+  {name:"50 St (A/C/E)",              lat:40.7624, lng:-73.9858, toPenn:5,  toWTC:18, lines:"A/C/E"},
+  {name:"49 St (N/R/W)",              lat:40.7597, lng:-73.9840, toPenn:4,  toWTC:16, lines:"N/R/W"},
+  {name:"51 St (6)",                  lat:40.7570, lng:-73.9719, toPenn:7,  toWTC:16, lines:"6"},
+  {name:"59 St-Columbus Circle",      lat:40.7682, lng:-73.9820, toPenn:7,  toWTC:20, lines:"A/B/C/D/1"},
+  {name:"Lexington Av/59 St",         lat:40.7626, lng:-73.9677, toPenn:6,  toWTC:14, lines:"4/5/6/N/R/W"},
+
+  // ---- Upper West Side ----
+  {name:"66 St-Lincoln Center",       lat:40.7740, lng:-73.9820, toPenn:8,  toWTC:22, lines:"1"},
+  {name:"72 St (1/2/3)",              lat:40.7789, lng:-73.9820, toPenn:9,  toWTC:23, lines:"1/2/3"},
+  {name:"72 St (B/C)",                lat:40.7757, lng:-73.9761, toPenn:10, toWTC:25, lines:"B/C"},
+  {name:"81 St-Museum",               lat:40.7814, lng:-73.9721, toPenn:12, toWTC:27, lines:"B/C"},
+  {name:"86 St (1)",                  lat:40.7886, lng:-73.9758, toPenn:12, toWTC:26, lines:"1"},
+  {name:"96 St (1/2/3)",              lat:40.7942, lng:-73.9721, toPenn:14, toWTC:24, lines:"1/2/3"},
+  {name:"103 St (1)",                 lat:40.7992, lng:-73.9685, toPenn:16, toWTC:30, lines:"1"},
+
+  // ---- Upper East Side ----
+  {name:"68 St-Hunter College",       lat:40.7685, lng:-73.9641, toPenn:8,  toWTC:15, lines:"6"},
+  {name:"77 St",                      lat:40.7738, lng:-73.9598, toPenn:10, toWTC:17, lines:"6"},
+  {name:"86 St (4/5/6)",              lat:40.7785, lng:-73.9554, toPenn:11, toWTC:14, lines:"4/5/6"},
+  {name:"86 St (Q)",                  lat:40.7782, lng:-73.9556, toPenn:10, toWTC:22, lines:"Q"},
+  {name:"96 St (4/5/6)",              lat:40.7853, lng:-73.9510, toPenn:13, toWTC:16, lines:"4/5/6"},
+  {name:"96 St (Q)",                  lat:40.7846, lng:-73.9515, toPenn:12, toWTC:24, lines:"Q"},
+
+  // ---- Chelsea / Flatiron / Village ----
+  {name:"28 St (1)",                  lat:40.7475, lng:-73.9987, toPenn:3,  toWTC:13, lines:"1"},
+  {name:"28 St (N/R/W)",              lat:40.7437, lng:-73.9881, toPenn:4,  toWTC:14, lines:"N/R/W"},
+  {name:"28 St (6)",                  lat:40.7432, lng:-73.9842, toPenn:5,  toWTC:13, lines:"6"},
+  {name:"23 St (1)",                  lat:40.7440, lng:-74.0017, toPenn:5,  toWTC:10, lines:"1"},
+  {name:"23 St (F/M)",                lat:40.7427, lng:-73.9928, toPenn:4,  toWTC:12, lines:"F/M"},
+  {name:"23 St (N/R/W)",              lat:40.7412, lng:-73.9893, toPenn:5,  toWTC:13, lines:"N/R/W"},
+  {name:"23 St (C/E)",                lat:40.7458, lng:-74.0011, toPenn:5,  toWTC:11, lines:"C/E"},
+  {name:"14 St (F/M/1/2/3)",          lat:40.7375, lng:-73.9962, toPenn:6,  toWTC:9,  lines:"F/M/L/1/2/3"},
+  {name:"14 St-Union Square",         lat:40.7349, lng:-73.9903, toPenn:7,  toWTC:11, lines:"L/N/Q/R/W/4/5/6"},
+  {name:"8 Av-14 St",                 lat:40.7396, lng:-74.0019, toPenn:7,  toWTC:11, lines:"A/C/E/L"},
+  {name:"Christopher St-Sheridan Sq", lat:40.7333, lng:-74.0027, toPenn:8,  toWTC:8,  lines:"1"},
+  {name:"W 4 St-Wash Sq",             lat:40.7322, lng:-74.0006, toPenn:8,  toWTC:7,  lines:"A/C/E/B/D/F/M"},
+  {name:"Houston St (1)",             lat:40.7283, lng:-74.0050, toPenn:10, toWTC:5,  lines:"1"},
+  {name:"Bleecker/B'way-Lafayette",   lat:40.7255, lng:-73.9944, toPenn:9,  toWTC:6,  lines:"6/B/D/F/M"},
+
+  // ---- SoHo / Lower Manhattan ----
+  {name:"Spring St (6)",              lat:40.7224, lng:-73.9972, toPenn:10, toWTC:5,  lines:"6"},
+  {name:"Spring St (C/E)",            lat:40.7261, lng:-74.0039, toPenn:10, toWTC:4,  lines:"C/E"},
+  {name:"Canal St",                   lat:40.7188, lng:-74.0008, toPenn:12, toWTC:3,  lines:"N/Q/R/W/J/Z/6/4"},
+  {name:"Chambers St (1/2/3)",        lat:40.7154, lng:-74.0092, toPenn:14, toWTC:1,  lines:"1/2/3"},
+  {name:"Chambers St (A/C)",          lat:40.7141, lng:-74.0089, toPenn:14, toWTC:1,  lines:"A/C"},
+  {name:"World Trade Center",         lat:40.7126, lng:-74.0099, toPenn:15, toWTC:0,  lines:"E + PATH"},
+  {name:"Fulton St",                  lat:40.7102, lng:-74.0089, toPenn:15, toWTC:1,  lines:"A/C/J/Z/2/3/4/5"},
+  {name:"Wall St (2/3)",              lat:40.7072, lng:-74.0112, toPenn:17, toWTC:2,  lines:"2/3"},
+  {name:"Wall St (4/5)",              lat:40.7074, lng:-74.0084, toPenn:16, toWTC:2,  lines:"4/5"},
+  {name:"Bowling Green",              lat:40.7048, lng:-74.0138, toPenn:18, toWTC:3,  lines:"4/5"},
+  {name:"South Ferry",                lat:40.7019, lng:-74.0132, toPenn:19, toWTC:5,  lines:"1"},
+  {name:"Whitehall St",               lat:40.7034, lng:-74.0131, toPenn:18, toWTC:4,  lines:"R/W"},
+
+  // ---- Harlem / Morningside ----
+  {name:"Cathedral Pkwy-110 St (1)",  lat:40.8005, lng:-73.9680, toPenn:16, toWTC:30, lines:"1"},
+  {name:"116 St (1)",                 lat:40.8057, lng:-73.9648, toPenn:18, toWTC:32, lines:"1"},
+  {name:"116 St (2/3)",               lat:40.8024, lng:-73.9496, toPenn:15, toWTC:18, lines:"2/3"},
+  {name:"125 St (1)",                 lat:40.8157, lng:-73.9586, toPenn:20, toWTC:34, lines:"1"},
+  {name:"125 St (2/3)",               lat:40.8078, lng:-73.9456, toPenn:17, toWTC:19, lines:"2/3"},
+  {name:"125 St (4/5/6)",             lat:40.8046, lng:-73.9375, toPenn:17, toWTC:19, lines:"4/5/6"},
+  {name:"125 St (A/B/C/D)",           lat:40.8116, lng:-73.9527, toPenn:15, toWTC:22, lines:"A/B/C/D"},
+  {name:"135 St (2/3)",               lat:40.8148, lng:-73.9408, toPenn:19, toWTC:21, lines:"2/3"},
+  {name:"145 St (A/B/C/D)",           lat:40.8246, lng:-73.9443, toPenn:18, toWTC:25, lines:"A/B/C/D"},
+
+  // ---- Brooklyn: Downtown / Heights / DUMBO ----
+  {name:"High St",                    lat:40.6993, lng:-73.9905, toPenn:14, toWTC:4,  lines:"A/C"},
+  {name:"York St",                    lat:40.6993, lng:-73.9867, toPenn:17, toWTC:7,  lines:"F"},
+  {name:"Clark St",                   lat:40.6976, lng:-73.9931, toPenn:16, toWTC:5,  lines:"2/3"},
+  {name:"Court St/Borough Hall",      lat:40.6929, lng:-73.9906, toPenn:15, toWTC:6,  lines:"R/2/3/4/5"},
+  {name:"Jay St-MetroTech",           lat:40.6923, lng:-73.9875, toPenn:16, toWTC:7,  lines:"A/C/F/R"},
+  {name:"DeKalb Av",                  lat:40.6902, lng:-73.9819, toPenn:14, toWTC:8,  lines:"B/Q/R"},
+  {name:"Atlantic Av-Barclays",       lat:40.6843, lng:-73.9775, toPenn:15, toWTC:9,  lines:"B/D/N/Q/R/2/3/4/5"},
+
+  // ---- Brooklyn: Park Slope / Gowanus / Fort Greene ----
+  {name:"Bergen St (F/G)",            lat:40.6864, lng:-73.9907, toPenn:20, toWTC:11, lines:"F/G"},
+  {name:"Bergen St (2/3)",            lat:40.6809, lng:-73.9750, toPenn:17, toWTC:11, lines:"2/3"},
+  {name:"Grand Army Plaza",           lat:40.6751, lng:-73.9700, toPenn:19, toWTC:13, lines:"2/3"},
+  {name:"Union St (R)",               lat:40.6773, lng:-73.9831, toPenn:18, toWTC:12, lines:"R"},
+  {name:"7 Av (B/Q)",                 lat:40.6659, lng:-73.9800, toPenn:20, toWTC:17, lines:"B/Q"},
+  {name:"Prospect Park",              lat:40.6617, lng:-73.9620, toPenn:23, toWTC:17, lines:"B/Q/S"},
+  {name:"4 Av-9 St",                  lat:40.6706, lng:-73.9894, toPenn:21, toWTC:15, lines:"F/G/R"},
+  {name:"Prospect Av (R)",            lat:40.6651, lng:-73.9931, toPenn:22, toWTC:16, lines:"R"},
+  {name:"Carroll St",                 lat:40.6800, lng:-73.9950, toPenn:21, toWTC:14, lines:"F/G"},
+  {name:"Smith-9 St",                 lat:40.6735, lng:-73.9956, toPenn:23, toWTC:17, lines:"F/G"},
+
+  // ---- Brooklyn: Williamsburg / Bushwick ----
+  {name:"Bedford Av",                 lat:40.7172, lng:-73.9568, toPenn:18, toWTC:22, lines:"L"},
+  {name:"Lorimer St (L)",             lat:40.7142, lng:-73.9502, toPenn:20, toWTC:24, lines:"L/G"},
+  {name:"Graham Av",                  lat:40.7144, lng:-73.9441, toPenn:22, toWTC:26, lines:"L"},
+  {name:"Grand St (L)",               lat:40.7118, lng:-73.9403, toPenn:24, toWTC:28, lines:"L"},
+  {name:"Montrose Av",                lat:40.7076, lng:-73.9398, toPenn:25, toWTC:30, lines:"L"},
+  {name:"Morgan Av",                  lat:40.7061, lng:-73.9331, toPenn:27, toWTC:32, lines:"L"},
+  {name:"Marcy Av (J/M/Z)",           lat:40.7085, lng:-73.9577, toPenn:17, toWTC:11, lines:"J/M/Z"},
+  {name:"Hewes St (J/M)",             lat:40.7071, lng:-73.9534, toPenn:19, toWTC:13, lines:"J/M"},
+
+  // ---- Brooklyn: Greenpoint ----
+  {name:"Nassau Av (G)",              lat:40.7244, lng:-73.9514, toPenn:23, toWTC:26, lines:"G"},
+  {name:"Greenpoint Av (G)",          lat:40.7311, lng:-73.9544, toPenn:24, toWTC:27, lines:"G"},
+
+  // ---- Queens: LIC / Court Sq ----
+  {name:"Court Sq",                   lat:40.7474, lng:-73.9452, toPenn:14, toWTC:22, lines:"E/M/G/7"},
+  {name:"Vernon Blvd-Jackson Av",     lat:40.7426, lng:-73.9537, toPenn:11, toWTC:21, lines:"7"},
+  {name:"Hunters Point Av",           lat:40.7425, lng:-73.9487, toPenn:13, toWTC:23, lines:"7"},
+  {name:"Queensboro Plaza",           lat:40.7507, lng:-73.9402, toPenn:14, toWTC:24, lines:"N/W/7"},
+
+  // ---- Queens: Astoria ----
+  {name:"36 Av",                      lat:40.7566, lng:-73.9296, toPenn:16, toWTC:26, lines:"N/W"},
+  {name:"30 Av",                      lat:40.7668, lng:-73.9216, toPenn:18, toWTC:28, lines:"N/W"},
+  {name:"Broadway (Astoria)",         lat:40.7719, lng:-73.9259, toPenn:20, toWTC:30, lines:"N/W"},
+  {name:"Astoria Blvd",               lat:40.7700, lng:-73.9175, toPenn:22, toWTC:32, lines:"N/W"},
+  {name:"Astoria-Ditmars Blvd",       lat:40.7754, lng:-73.9125, toPenn:23, toWTC:33, lines:"N/W"},
+
+  // ---- Queens: Sunnyside / Woodside ----
+  {name:"40 St-Lowery St",            lat:40.7439, lng:-73.9240, toPenn:15, toWTC:26, lines:"7"},
+  {name:"46 St-Bliss St",             lat:40.7432, lng:-73.9184, toPenn:17, toWTC:28, lines:"7"},
+  {name:"52 St (7)",                  lat:40.7441, lng:-73.9127, toPenn:19, toWTC:30, lines:"7"},
+
+  // ---- Bronx (borderline) ----
+  {name:"138 St-Grand Concourse",     lat:40.8133, lng:-73.9296, toPenn:19, toWTC:20, lines:"4/5"},
+  {name:"149 St-Grand Concourse",     lat:40.8182, lng:-73.9270, toPenn:21, toWTC:22, lines:"2/4/5"},
+  {name:"161 St-Yankee Stadium",      lat:40.8276, lng:-73.9257, toPenn:20, toWTC:23, lines:"4/B/D"},
+];
+
+function commute(s) {
+  const viaPenn = s.toPenn + PENN_OVERHEAD;
+  const viaWTC  = s.toWTC  + WTC_OVERHEAD;
+  return { total: Math.min(viaPenn, viaWTC), viaPenn, viaWTC };
+}
+
+function colorFor(mins) {
+  if (mins < 40) return '#1a9850';
+  if (mins < 50) return '#66bd63';
+  if (mins < 55) return '#d9ef8b';
+  if (mins < 60) return '#fee08b';
+  if (mins < 70) return '#fc8d59';
+  return '#d73027';
+}
+
+// ---- Init map ----
+const map = L.map('map', { zoomControl: true, preferCanvas: true })
+            .setView([40.7400, -74.0000], 12);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
+
+// ---- Seton Hall Law marker ----
+const shlIcon = L.divIcon({
+  className: '',
+  html: '<div class="shl-label">⚖ Seton Hall Law</div>',
+  iconSize: [130, 24],
+  iconAnchor: [65, 12]
+});
+L.marker([40.7369, -74.1676], { icon: shlIcon, zIndexOffset: 2000 })
+  .addTo(map)
+  .bindPopup('<div class="popup-title">Seton Hall Law School</div>One Newark Center<br>1109 Raymond Blvd, Newark NJ<br><span style="color:#666;font-size:11px">~5 min walk from Newark Penn Station</span>');
+
+// ---- Newark Penn marker ----
+L.circleMarker([40.7348, -74.1644], {
+  radius: 7, color: '#333', weight: 2, fillColor: '#666', fillOpacity: 0.9
+}).addTo(map).bindPopup('<b>Newark Penn Station</b><br>PATH Newark-WTC + NJ Transit NEC<br>~5 min walk to Seton Hall Law');
+
+// ---- Transfer gateway markers (highlighted) ----
+const gateways = [
+  { name: "NY Penn Station (NJ Transit)", lat: 40.7506, lng: -73.9936 },
+  { name: "WTC PATH Station",              lat: 40.7126, lng: -74.0099 },
+];
+gateways.forEach(g => {
+  L.circleMarker([g.lat, g.lng], {
+    radius: 11, color: '#1a4d8f', weight: 3, fillColor: '#4a90d9', fillOpacity: 0.4
+  }).addTo(map).bindTooltip(g.name, { permanent: false, direction: 'top' });
+});
+
+// ---- Station markers ----
+stations.forEach(s => {
+  const c = commute(s);
+  const fastest = c.viaWTC <= c.viaPenn ? 'wtc' : 'penn';
+  const color = colorFor(c.total);
+
+  const marker = L.circleMarker([s.lat, s.lng], {
+    radius: 7,
+    color: '#1a1a1a',
+    weight: 1,
+    fillColor: color,
+    fillOpacity: 0.92
+  }).addTo(map);
+
+  const pennHtml = `
+    <div class="popup-route${fastest==='penn'?' fastest':''}">
+      <b>${fastest==='penn'?'✓ ':''}Via NY Penn Station</b><br>
+      ${s.toPenn} min subway + 3 walk + 8 wait + 20 NJT + 5 walk
+      = <b>${c.viaPenn} min</b>
+    </div>`;
+  const wtcHtml = `
+    <div class="popup-route${fastest==='wtc'?' fastest':''}">
+      <b>${fastest==='wtc'?'✓ ':''}Via WTC PATH</b><br>
+      ${s.toWTC} min subway + 2 walk + 5 wait + 22 PATH + 5 walk
+      = <b>${c.viaWTC} min</b>
+    </div>`;
+
+  marker.bindPopup(`
+    <div class="popup-title">${s.name}</div>
+    <div class="popup-lines">Lines: ${s.lines}</div>
+    <div class="popup-time" style="color:${color}">${c.total} min</div>
+    ${pennHtml}
+    ${wtcHtml}
+    <div class="popup-note">Peak-hour estimate. Off-peak adds ~5–10 min for longer waits.</div>
+  `, { maxWidth: 280 });
+
+  marker.bindTooltip(`${s.name}: ${c.total} min`, { direction: 'top' });
+});
+
+// ---- Methodology box (bottom-right) ----
+const methodControl = L.control({ position: 'bottomright' });
+methodControl.onAdd = function() {
+  const div = L.DomUtil.create('div', 'method-box');
+  div.innerHTML = `
+    <b>Model</b><br>
+    For each station, the faster of two routes wins:<br>
+    <b>A.</b> Subway → 34 St-Penn → NJ Transit NEC (~20 min) → Newark Penn<br>
+    <b>B.</b> Subway → WTC/Fulton → PATH Newark-WTC (~22 min) → Newark Penn<br>
+    Both add ~5 min walk to SHL. Waits based on peak headways (NJT ~8 min, PATH ~5 min).
+  `;
+  L.DomEvent.disableClickPropagation(div);
+  return div;
+};
+methodControl.addTo(map);
+
+// ---- Fit bounds to include SHL and all stations ----
+const bounds = L.latLngBounds([[40.7369, -74.1676]]);
+stations.forEach(s => bounds.extend([s.lat, s.lng]));
+map.fitBounds(bounds, { padding: [60, 60] });
+</script>
+</body>
+</html>
